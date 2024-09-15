@@ -1,9 +1,15 @@
 import React from 'react'
+import { Home } from './Pages/Home/Home';
+import {HashRouter as Router, Routes, Route} from 'react-router-dom'
 
 function App() {
   return (
     <>
-    <h1>Dra. Ana Maria</h1>
+    <Router>
+      <Routes>
+        <Route path='/' element={<Home/>} />
+      </Routes>
+    </Router>
     </>
   );
 }
