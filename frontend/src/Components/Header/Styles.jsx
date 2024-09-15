@@ -17,6 +17,11 @@ export const HeaderTitle = styled.div`
     padding: 10px;
     gap: 5px;
 
+    h2 {
+        display: flex;
+        align-items: center;
+    }
+
     img {
         width: 40px;
     }
