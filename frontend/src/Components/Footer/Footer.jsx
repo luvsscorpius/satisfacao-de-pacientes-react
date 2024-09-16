@@ -31,7 +31,12 @@ export const Footer = () => {
                 </F.acessoContainer>
 
                 <F.contatoContainer>
-                    teste
+                    <ul>
+                        <h2>Contato</h2>
+                        <span>
+                            <li>(11) 91234-5678</li>
+                        </span>
+                    </ul>
                 </F.contatoContainer>
             </F.containers>
             <F.lineDown></F.lineDown>

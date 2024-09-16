@@ -11,14 +11,14 @@ export const Footer = styled.footer`
 `
 
 export const lineUp = styled.div`
-    width: 600px;
+    width: 800px;
     height: 8px;
     background-color: #A8DADC;
     margin: 0 auto;
 `
 
 export const lineDown = styled.div`
-    width: 600px;
+    width: 800px;
     height: 5px;
     background-color: #A8DADC;
     margin: 0 auto;
@@ -68,16 +68,17 @@ export const iconsContainer = styled.div`
 `
 
 export const linksContainer = styled.div`
-    width: 300px;
+    width: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     margin: 0 auto;
+    color: #fff;
+    height: 100%;
 
     h2 {
         width: 100%;
-        height: 50px;
     }
 
     ul {
@@ -85,12 +86,18 @@ export const linksContainer = styled.div`
         align-items: flex-start;
         justify-content: center;
         flex-direction: column;
-        border: 1px solid red;
-        height: 100px;
+        height: 150px;
+        gap: 10px;
+    }
+
+    li {
+        list-style: none;
+        cursor: pointer;
     }
 `
 
 export const contatoContainer = styled.div`
     width: 100%;
     border: 1px solid red;
+    display: flex;
 `
