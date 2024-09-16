@@ -25,7 +25,7 @@ export const lineDown = styled.div`
 `
 
 export const containers = styled.div`
-    width: 100%;
+    width: 1000px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -68,7 +68,7 @@ export const iconsContainer = styled.div`
 `
 
 export const linksContainer = styled.div`
-    width: 500px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -98,6 +98,54 @@ export const linksContainer = styled.div`
 
 export const contatoContainer = styled.div`
     width: 100%;
-    border: 1px solid red;
     display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: #fff;
+
+    h2 {
+        height: 30px;
+    }
+        
+    span {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    ul {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        height: 150px;
+        gap: 10px;
+        margin: 100px;
+    }
+
+    li {
+        list-style: none;
+        max-width: 300px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+`
+
+export const infoContainer = styled.div`
+    width: 1100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+
+    p {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color: #fff;
+    }
 `
