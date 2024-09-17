@@ -10,27 +10,27 @@ export const Home = () => {
 
     const navigate = useNavigate()
 
-    const handleClick = () => {
-        navigate('/avalie')
+    const handleClick = (e) => {
+        e.preventDefault()
     }
 
     return (
         <H.Content>
             <Info titulo="Deixe sua avaliação" p="Ficamos felizes com a sua sessão, utilize o formulário abaixo para avaliar o produto"/>
 
-            <H.FormContainer>
+            <H.FormContainer onSubmit={handleClick}>
 
                 <Steps/>
 
                 <H.inputContainer>
                     <H.labelContent>
-                        <label htmlFor="">Nome:</label>
-                        <input type="text" name="name" id="name" />
+                        <label htmlFor="name">Nome:</label>
+                        <input type="text" name="name" id="name" required/>
                     </H.labelContent>
 
                     <H.labelContent>
-                        <label htmlFor="">Email:</label>
-                        <input type="email" name="email" id="email"  />
+                        <label htmlFor="email">Email:</label>
+                        <input type="email" name="email" id="email" required />
                     </H.labelContent>
 
                     <H.checkContent>
@@ -40,7 +40,7 @@ export const Home = () => {
                 </H.inputContainer>
 
                 <H.buttonContent>
-                    <H.buttonAvancar onClick={handleClick}>Avançar</H.buttonAvancar>
+                    <H.buttonAvancar type='submit'>Avançar</H.buttonAvancar>
                 </H.buttonContent>
             </H.FormContainer>
         </H.Content>
