@@ -6,7 +6,7 @@ import {Steps} from '../../Components/Steps/Steps';
 import { Context } from '../../Context/Context';
 
 export const Home = () => {
-    const {userInfo, setUserInfo, isChecked, setIsChecked} = useContext(Context)
+    const {userInfo, setUserInfo, isChecked, setIsChecked, isRequired, setIsRequired} = useContext(Context)
 
     const navigate = useNavigate()
 
@@ -17,14 +17,15 @@ export const Home = () => {
     console.log(isChecked)
 
     const checkIsChecked = () => {
-        if (!isChecked) {
-            
+        if (isChecked === true) {
+            console.log(isChecked)
+            setIsRequired(prevState => !prevState)
+            navigate("/avalie")
         }
     }
 
     const handleToggleCheck = () => {
         setIsChecked(prevState => !prevState)
-        console.log(isChecked)
     }
 
     return (
@@ -38,12 +39,12 @@ export const Home = () => {
                 <H.inputContainer>
                     <H.labelContent>
                         <label htmlFor="name">Nome:</label>
-                        <input type="text" name="name" id="name" required={isChecked}/>
+                        <input type="text" name="name" id="name" required={isRequired}/>
                     </H.labelContent>
 
                     <H.labelContent>
                         <label htmlFor="email">Email:</label>
-                        <input type="email" name="email" id="email" required={isChecked} />
+                        <input type="email" name="email" id="email" required={isRequired} />
                     </H.labelContent>
 
                     <H.checkContent>
