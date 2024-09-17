@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import * as H from './Styles'
 import { FaUser, FaRegStar } from "react-icons/fa";
 import { BsSend } from "react-icons/bs";
 import { useNavigate } from 'react-router-dom';
+import Info from '../../Components/Info/Info';
 
 export const Home = () => {
 
@@ -14,10 +15,7 @@ export const Home = () => {
 
     return (
         <H.Content>
-            <H.Info>
-                <h1>Deixe sua avaliação</h1>
-                <p>Ficamos felizes com a sua sessão, utilize o formulário abaixo para avaliar o produto</p>
-            </H.Info>
+            <Info titulo="Deixe sua avaliação" p="Ficamos felizes com a sua sessão, utilize o formulário abaixo para avaliar o produto"/>
 
             <H.FormContainer>
 
@@ -44,7 +42,7 @@ export const Home = () => {
 
                     <H.labelContent>
                         <label htmlFor="">Email:</label>
-                        <input type="email" name="email" id="email" />
+                        <input type="email" name="email" id="email"  />
                     </H.labelContent>
 
                     <H.checkContent>
