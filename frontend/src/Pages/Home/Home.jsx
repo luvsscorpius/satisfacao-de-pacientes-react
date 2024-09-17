@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import * as H from './Styles'
 import { useNavigate } from 'react-router-dom';
 import {Info} from '../../Components/Info/Info';
 import {Steps} from '../../Components/Steps/Steps';
+import { Context } from '../../Context/Context';
 
 export const Home = () => {
+    const {userInfo, setUserInfo} = useContext(Context)
 
     const navigate = useNavigate()
 

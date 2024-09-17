@@ -5,6 +5,7 @@ import { Header } from './Components/Header/Header';
 import { GlobalStyle } from './Css/GlobalStyle';
 import { Footer } from './Components/Footer/Footer';
 import Avalie from './Pages/Avalie/Avalie';
+import { ContextProvider } from './Context/Context';
 
 function App() {
   return (
@@ -12,12 +13,14 @@ function App() {
       <GlobalStyle/>
       <Header />
       <Router>
+        <ContextProvider>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/avalie' element={<Avalie/>}>
             
           </Route>
         </Routes>
+        </ContextProvider>
       </Router>
       <Footer/>
     </>
