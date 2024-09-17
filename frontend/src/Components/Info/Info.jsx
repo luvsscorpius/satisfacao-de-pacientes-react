@@ -1,7 +1,7 @@
 import React from 'react'
 import * as I from './Styles'
 
-const Info = ({titulo, p}) => {
+export const Info = ({titulo, p}) => {
 
   return (
     <I.Info>
@@ -10,5 +10,3 @@ const Info = ({titulo, p}) => {
     </I.Info>
   )
 }
-
-export default Info

@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import * as H from './Styles'
-import { FaUser, FaRegStar } from "react-icons/fa";
-import { BsSend } from "react-icons/bs";
 import { useNavigate } from 'react-router-dom';
-import Info from '../../Components/Info/Info';
+import {Info} from '../../Components/Info/Info';
+import {Steps} from '../../Components/Steps/Steps';
 
 export const Home = () => {
 
@@ -19,20 +18,7 @@ export const Home = () => {
 
             <H.FormContainer>
 
-                <H.Steps>
-                    <H.Step className='active'>
-                        <FaUser className='icon' />
-                        <p>Identificação</p>
-                    </H.Step>
-                    <H.Step>
-                        <FaRegStar className='icon star' />
-                        <p>Avaliação</p>
-                    </H.Step>
-                    <H.Step>
-                        <BsSend className='icon' />
-                        <p>Envio</p>
-                    </H.Step>
-                </H.Steps>
+                <Steps/>
 
                 <H.inputContainer>
                     <H.labelContent>
