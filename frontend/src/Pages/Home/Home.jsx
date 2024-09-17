@@ -6,12 +6,25 @@ import {Steps} from '../../Components/Steps/Steps';
 import { Context } from '../../Context/Context';
 
 export const Home = () => {
-    const {userInfo, setUserInfo} = useContext(Context)
+    const {userInfo, setUserInfo, isChecked, setIsChecked} = useContext(Context)
 
     const navigate = useNavigate()
 
     const handleClick = (e) => {
         e.preventDefault()
+    }
+
+    console.log(isChecked)
+
+    const checkIsChecked = () => {
+        if (!isChecked) {
+            
+        }
+    }
+
+    const handleToggleCheck = () => {
+        setIsChecked(prevState => !prevState)
+        console.log(isChecked)
     }
 
     return (
@@ -25,22 +38,22 @@ export const Home = () => {
                 <H.inputContainer>
                     <H.labelContent>
                         <label htmlFor="name">Nome:</label>
-                        <input type="text" name="name" id="name" required/>
+                        <input type="text" name="name" id="name" required={isChecked}/>
                     </H.labelContent>
 
                     <H.labelContent>
                         <label htmlFor="email">Email:</label>
-                        <input type="email" name="email" id="email" required />
+                        <input type="email" name="email" id="email" required={isChecked} />
                     </H.labelContent>
 
                     <H.checkContent>
-                        <input type="checkbox" name="check" id="check" />
+                        <input type="checkbox" name="check" id="check" checked={isChecked} onChange={handleToggleCheck}/>
                         <label htmlFor="check">Desejo permanecer anônimo</label>
                     </H.checkContent>
                 </H.inputContainer>
 
                 <H.buttonContent>
-                    <H.buttonAvancar type='submit'>Avançar</H.buttonAvancar>
+                    <H.buttonAvancar type='submit' onClick={checkIsChecked}>Avançar</H.buttonAvancar>
                 </H.buttonContent>
             </H.FormContainer>
         </H.Content>
