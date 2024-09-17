@@ -2,8 +2,16 @@ import React from 'react'
 import * as H from './Styles'
 import { FaUser, FaRegStar } from "react-icons/fa";
 import { BsSend } from "react-icons/bs";
+import { useNavigate } from 'react-router-dom';
 
 export const Home = () => {
+
+    const navigate = useNavigate()
+
+    const handleClick = () => {
+        navigate('/avalie')
+    }
+
     return (
         <H.Content>
             <H.Info>
@@ -46,7 +54,7 @@ export const Home = () => {
                 </H.inputContainer>
 
                 <H.buttonContent>
-                    <H.buttonAvancar>Avançar</H.buttonAvancar>
+                    <H.buttonAvancar onClick={handleClick}>Avançar</H.buttonAvancar>
                 </H.buttonContent>
             </H.FormContainer>
         </H.Content>
