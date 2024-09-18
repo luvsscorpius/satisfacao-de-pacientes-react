@@ -76,6 +76,7 @@ export const buttonContent = styled.div`
     height: 44px;
     display: flex;
     justify-content: flex-end;
+    gap: 10px;
 `
 
 export const buttonAvancar = styled.button`
