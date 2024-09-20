@@ -10,7 +10,31 @@ export const rateContent = styled.div`
     align-items: center;
     
     span {
-        height: 20px;
+        height: 100%;
+        text-align: center;
+        position: relative;
+
+        input {
+            opacity: 0;
+            position: absolute;
+            width: 25px;
+            cursor: pointer;
+        }
+    }
+
+    svg {
+        cursor: pointer;
+        font-size: 1.6rem;
+        transition: 0.3s;
+        height: 40px;
+    }
+
+    svg:hover {
+        fill: #457B9D;
+    }
+
+    input:checked ~ svg {
+        fill: #457B9D;
     }
 `
 
