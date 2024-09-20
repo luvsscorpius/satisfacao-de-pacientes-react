@@ -9,9 +9,15 @@ import { Context } from '../../Context/Context'
 
 const Avalie = () => {
 
-  const { currentStep } = useContext(Context)
+  const { currentStep, changeStep } = useContext(Context)
 
   const navigate = useNavigate()
+
+  const handleClick = (e) => {
+    e.preventDefault()
+    changeStep(currentStep - 1, e)
+    navigate("/")
+  }
 
   return (
     <Home.Content>
@@ -51,7 +57,7 @@ const Avalie = () => {
         </Home.inputContainer>
 
         <Home.buttonContent>
-          <Home.buttonAvancar onClick={() => navigate('/')}>Voltar</Home.buttonAvancar>
+          <Home.buttonAvancar onClick={(e) => handleClick(e)}>Voltar</Home.buttonAvancar>
           <Home.buttonAvancar>Avançar</Home.buttonAvancar>
         </Home.buttonContent>
       </Home.FormContainer>

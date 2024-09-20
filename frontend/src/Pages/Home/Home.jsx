@@ -6,7 +6,7 @@ import { Steps } from '../../Components/Steps/Steps';
 import { Context } from '../../Context/Context';
 
 export const Home = () => {
-    const { userInfo, setUserInfo, isChecked, setIsChecked, isRequired, setIsRequired, currentStep, changeCurrentStep } = useContext(Context)
+    const { userInfo, setUserInfo, isChecked, setIsChecked, isRequired, setIsRequired, currentStep, changeStep } = useContext(Context)
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
 
@@ -15,10 +15,13 @@ export const Home = () => {
     const navigate = useNavigate()
 
     // Usando essa função para ver se o checkbox esta checado, se sim deixamos a pessoa passar para a próxima etapa do formulário
-    const checkIsChecked = () => {
+    const checkIsChecked = (e) => {
+        // adicionando e.preventDefault para arrumar o erro de Form submission canceled because the form is not connected
+        e.preventDefault()
         if (isChecked === true) {
             setIsRequired(prevState => !prevState)
             navigate("/avalie")
+            changeStep(currentStep + 1, e)
         }
 
         if (name && email) {
@@ -36,7 +39,7 @@ export const Home = () => {
         <H.Content>
             <Info titulo="Deixe sua avaliação" p="Ficamos felizes com a sua sessão, utilize o formulário abaixo para avaliar o produto" />
 
-            <H.FormContainer onSubmit={(e) => changeCurrentStep(currentStep + 1, e)}>
+            <H.FormContainer >
 
                 <Steps currentStep={currentStep} />
 
@@ -58,7 +61,7 @@ export const Home = () => {
                 </H.inputContainer>
 
                 <H.buttonContent>
-                    <H.buttonAvancar type='submit' onClick={checkIsChecked}>Avançar</H.buttonAvancar>
+                    <H.buttonAvancar type='submit' onClick={(e) => checkIsChecked(e)}>Avançar</H.buttonAvancar>
                 </H.buttonContent>
             </H.FormContainer>
         </H.Content>
