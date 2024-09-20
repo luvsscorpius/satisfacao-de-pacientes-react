@@ -6,15 +6,13 @@ import { Steps } from '../../Components/Steps/Steps';
 import { Context } from '../../Context/Context';
 
 export const Home = () => {
-    const { userInfo, setUserInfo, isChecked, setIsChecked, isRequired, setIsRequired } = useContext(Context)
+    const { userInfo, setUserInfo, isChecked, setIsChecked, isRequired, setIsRequired, currentStep, changeCurrentStep } = useContext(Context)
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
 
-    const navigate = useNavigate()
+    console.log(currentStep)
 
-    const handleClick = (e) => {
-        e.preventDefault()
-    }
+    const navigate = useNavigate()
 
     // Usando essa função para ver se o checkbox esta checado, se sim deixamos a pessoa passar para a próxima etapa do formulário
     const checkIsChecked = () => {
@@ -38,9 +36,9 @@ export const Home = () => {
         <H.Content>
             <Info titulo="Deixe sua avaliação" p="Ficamos felizes com a sua sessão, utilize o formulário abaixo para avaliar o produto" />
 
-            <H.FormContainer onSubmit={handleClick}>
+            <H.FormContainer onSubmit={(e) => changeCurrentStep(currentStep + 1, e)}>
 
-                <Steps />
+                <Steps currentStep={currentStep} />
 
                 <H.inputContainer>
                     <H.labelContent>

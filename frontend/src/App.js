@@ -8,12 +8,18 @@ import Avalie from './Pages/Avalie/Avalie';
 import { ContextProvider } from './Context/Context';
 
 function App() {
+
+  const formComponents = [
+    <Home/>,
+    <Avalie/>
+  ]
+
   return (
     <>
       <GlobalStyle/>
       <Header />
       <Router>
-        <ContextProvider>
+        <ContextProvider formComponents={formComponents}>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/avalie' element={<Avalie/>}>

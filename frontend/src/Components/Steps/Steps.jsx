@@ -3,7 +3,9 @@ import * as S from './Styles'
 import { FaUser, FaRegStar } from "react-icons/fa";
 import { BsSend } from "react-icons/bs";
 
-export const Steps = () => {
+export const Steps = (currentStep) => {
+    console.log(currentStep)
+
     return (
         <S.Steps>
             <S.Step className='active'>

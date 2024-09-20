@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import * as Home from '../Home/Styles'
 import { Info } from '../../Components/Info/Info'
 import { Steps } from '../../Components/Steps/Steps'
 import * as A from './Styles'
 import { useNavigate } from 'react-router-dom'
 import { BsFillEmojiHeartEyesFill, BsFillEmojiSmileFill, BsFillEmojiNeutralFill, BsFillEmojiFrownFill, BsEmojiFrownFill } from 'react-icons/bs'
+import { Context } from '../../Context/Context'
 
 const Avalie = () => {
+
+  const { currentStep } = useContext(Context)
 
   const navigate = useNavigate()
 
@@ -15,7 +18,7 @@ const Avalie = () => {
       <Info titulo="Deixe sua avaliação" p="Ficamos felizes com a sua sessão, utilize o formulário abaixo para avaliar a sessão" />
 
       <Home.FormContainer>
-        <Steps />
+        <Steps currentStep={currentStep} />
 
         <Home.inputContainer>
           <A.rateContent>
