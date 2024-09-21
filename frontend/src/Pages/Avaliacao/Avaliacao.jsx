@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 import { BsFillEmojiHeartEyesFill, BsFillEmojiSmileFill, BsFillEmojiNeutralFill, BsFillEmojiFrownFill, BsEmojiFrownFill } from 'react-icons/bs'
 import { Context } from '../../Context/Context'
 
-const Avalie = () => {
+const Avaliacao = () => {
 
   const { currentStep, changeStep } = useContext(Context)
 
@@ -65,4 +65,4 @@ const Avalie = () => {
   )
 }
 
-export default Avalie
+export default Avaliacao

@@ -20,14 +20,14 @@ export const Home = () => {
         e.preventDefault()
         if (isChecked === true) {
             setIsRequired(prevState => !prevState)
-            navigate("/avalie")
+            navigate("/avaliacao")
             changeStep(currentStep + 1, e)
         }
 
         if (name && email) {
             // Enviando as informações
             setUserInfo({ name, email, isChecked })
-            navigate('/avalie')
+            navigate('/avaliacao')
         }
     }
 
