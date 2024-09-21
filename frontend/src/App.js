@@ -12,10 +12,10 @@ import { Envio } from './Pages/Envio/Envio';
 function App() {
 
   const formComponents = [
-    <Home/>,
-    <Avaliacao/>,
-    <Avalie/>,
-    <Envio/>
+    <Home />,
+    <Avaliacao />,
+    <Avalie />,
+    <Envio />
   ]
 
   return (
