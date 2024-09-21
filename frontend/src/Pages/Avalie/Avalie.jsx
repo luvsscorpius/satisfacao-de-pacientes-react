@@ -7,7 +7,7 @@ import * as A from './Styles'
 import { useNavigate } from 'react-router-dom'
 
 export const Avalie = () => {
-    const { currentStep } = useContext(Context)
+    const { currentStep, changeStep } = useContext(Context)
     const navigate = useNavigate()
 
     const previusPage = (e) => {
@@ -15,11 +15,18 @@ export const Avalie = () => {
         navigate('/avaliacao')
     }
 
+    // Função para ir para a próxima página
+    const nextPage = (e) => {
+        e.preventDefault()
+        changeStep(currentStep + 1, e)
+        navigate('/avaliacao/envio')
+    }
+
     return (
         <Home.Content>
             <Info titulo="Deixe sua avaliação" p="Ficamos felizes com a sua sessão, utilize o formulário abaixo para avaliar a sessão" />
 
-            <Home.FormContainer>
+            <Home.FormContainer onSubmit={(e) => nextPage(e)}>
                 <Steps currentStep={currentStep} />
 
                 <Home.inputContainer>
