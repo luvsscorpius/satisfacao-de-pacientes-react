@@ -17,7 +17,7 @@ export const rateContent = styled.div`
         input {
             opacity: 0;
             position: absolute;
-            width: 25px;
+            width: 15px;
             cursor: pointer;
         }
     }
