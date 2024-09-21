@@ -6,6 +6,7 @@ import { GlobalStyle } from './Css/GlobalStyle';
 import { Footer } from './Components/Footer/Footer';
 import Avaliacao from './Pages/Avaliacao/Avaliacao';
 import { ContextProvider } from './Context/Context';
+import { Avalie } from './Pages/Avalie/Avalie';
 
 function App() {
 
@@ -22,9 +23,8 @@ function App() {
         <ContextProvider formComponents={formComponents}>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/avaliacao' element={<Avaliacao/>}>
-            
-          </Route>
+          <Route path='/avaliacao' element={<Avaliacao/>}/>
+          <Route path='/avaliacao/avalie' element={<Avalie/>}/>
         </Routes>
         </ContextProvider>
       </Router>

@@ -19,6 +19,11 @@ const Avaliacao = () => {
     navigate("/")
   }
 
+  const handleNextPage = (e) => {
+    e.preventDefault()
+    navigate("/avaliacao/avalie")
+  }
+
   return (
     <Home.Content>
       <Info titulo="Deixe sua avaliação" p="Ficamos felizes com a sua sessão, utilize o formulário abaixo para avaliar a sessão" />
@@ -58,7 +63,7 @@ const Avaliacao = () => {
 
         <Home.buttonContent>
           <Home.buttonAvancar onClick={(e) => handleClick(e)}>Voltar</Home.buttonAvancar>
-          <Home.buttonAvancar>Avançar</Home.buttonAvancar>
+          <Home.buttonAvancar onClick={(e) => handleNextPage(e)}>Avançar</Home.buttonAvancar>
         </Home.buttonContent>
       </Home.FormContainer>
     </Home.Content>
