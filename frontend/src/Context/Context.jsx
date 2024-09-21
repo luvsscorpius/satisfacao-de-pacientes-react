@@ -1,5 +1,4 @@
-import React, {createContext, useEffect, useState} from "react";
-import { useLocation } from "react-router-dom";
+import React, {createContext, useState} from "react";
 
 export const Context = createContext(null)
 
@@ -9,8 +8,6 @@ export const ContextProvider = ({children, formComponents}) => {
     const [isRequired, setIsRequired] = useState(true)
 
     const [currentStep, setCurrentStep] = useState(0)
-
-    const location = useLocation()
 
     // Lógica no botao para avançar e mudar o currentStep
     const changeStep = (i, e) => {
@@ -22,6 +19,8 @@ export const ContextProvider = ({children, formComponents}) => {
         // se I é um indice válido, atualiza o estado 'currentStep' com o novo indice
         setCurrentStep(i)
     }
+
+    console.log("O passo: ", currentStep)
 
     const contextValue = {userInfo, setUserInfo, isChecked, setIsChecked, isRequired, setIsRequired, currentStep, setCurrentStep, changeStep}
     return (
