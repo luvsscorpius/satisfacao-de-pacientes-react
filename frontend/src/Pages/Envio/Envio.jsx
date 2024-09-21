@@ -5,9 +5,18 @@ import { Steps } from '../../Components/Steps/Steps'
 import { Context } from '../../Context/Context'
 import * as Avalie from '../Avalie/Styles'
 import * as E from './Styles'
+import { useNavigate } from 'react-router-dom'
 
 export const Envio = () => {
     const { currentStep, changeStep } = useContext(Context)
+
+    const navigate = useNavigate()
+
+    const previousPage = (e) => {
+        e.preventDefault()
+        changeStep(currentStep - 1, e)
+        navigate('/avaliacao/avalie')
+    }
 
   return (
     <Home.Content>
@@ -31,7 +40,7 @@ export const Envio = () => {
             </Home.inputContainer>
 
             <Home.buttonContent>
-                <Home.buttonAvancar>Voltar</Home.buttonAvancar>
+                <Home.buttonAvancar onClick={(e) => previousPage(e)}>Voltar</Home.buttonAvancar>
                 <Home.buttonAvancar>Enviar</Home.buttonAvancar>
             </Home.buttonContent>
         </Home.FormContainer>

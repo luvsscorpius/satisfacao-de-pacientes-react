@@ -13,7 +13,7 @@ const Avaliacao = () => {
 
   const navigate = useNavigate()
 
-  const handleClick = (e) => {
+  const previousPage = (e) => {
     e.preventDefault()
     changeStep(currentStep - 1, e)
     navigate("/")
@@ -63,7 +63,7 @@ const Avaliacao = () => {
         </Home.inputContainer>
 
         <Home.buttonContent>
-          <Home.buttonAvancar onClick={(e) => handleClick(e)}>Voltar</Home.buttonAvancar>
+          <Home.buttonAvancar onClick={(e) => previousPage(e)}>Voltar</Home.buttonAvancar>
           <Home.buttonAvancar type='submit'>Avançar</Home.buttonAvancar>
         </Home.buttonContent>
       </Home.FormContainer>

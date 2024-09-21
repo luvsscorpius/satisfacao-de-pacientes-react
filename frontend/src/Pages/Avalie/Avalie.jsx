@@ -10,7 +10,7 @@ export const Avalie = () => {
     const { currentStep, changeStep } = useContext(Context)
     const navigate = useNavigate()
 
-    const previusPage = (e) => {
+    const previousPage = (e) => {
         e.preventDefault()
         navigate('/avaliacao')
     }
@@ -74,7 +74,7 @@ export const Avalie = () => {
                 </Home.inputContainer>
 
                 <Home.buttonContent>
-                    <Home.buttonAvancar onClick={(e) => previusPage(e)}>Voltar</Home.buttonAvancar>
+                    <Home.buttonAvancar onClick={(e) => previousPage(e)}>Voltar</Home.buttonAvancar>
                     <Home.buttonAvancar>Avançar</Home.buttonAvancar>
                 </Home.buttonContent>
             </Home.FormContainer>
