@@ -7,13 +7,15 @@ import { Footer } from './Components/Footer/Footer';
 import Avaliacao from './Pages/Avaliacao/Avaliacao';
 import { ContextProvider } from './Context/Context';
 import { Avalie } from './Pages/Avalie/Avalie';
+import { Envio } from './Pages/Envio/Envio';
 
 function App() {
 
   const formComponents = [
     <Home/>,
     <Avaliacao/>,
-    <Avalie/>
+    <Avalie/>,
+    <Envio/>
   ]
 
   return (
@@ -26,6 +28,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/avaliacao' element={<Avaliacao/>}/>
           <Route path='/avaliacao/avalie' element={<Avalie/>}/> 
+          <Route path='/avaliacao/envio' element={<Envio/>}/>
         </Routes>
         </ContextProvider>
       </Router>
