@@ -28,28 +28,29 @@ const Avaliacao = () => {
     <Home.Content>
       <Info titulo="Deixe sua avaliação" p="Ficamos felizes com a sua sessão, utilize o formulário abaixo para avaliar a sessão" />
 
-      <Home.FormContainer>
+      {/* Changing handleNextPage from onClick to onSubmit */}
+      <Home.FormContainer onSubmit={(e) => handleNextPage(e)}>
         <Steps currentStep={currentStep} />
 
         <Home.inputContainer>
           <A.rateContent>
             <span>
-              <input type="radio" name="unsatisfied" id="unsatisfied" />
+              <input type="radio" name="rating" id="unsatisfied" value="unsatisfied" required/>
               <BsEmojiFrownFill />
               <p>Ruim</p>
             </span>
             <span>
-              <input type="radio" name="unsatisfied" id="unsatisfied" />
+              <input type="radio" name="rating" id="neutral" value="neutral" required/>
               <BsFillEmojiNeutralFill />
               <p>Regular</p>
             </span>
             <span>
-              <input type="radio" name="unsatisfied" id="unsatisfied" />
+              <input type="radio" name="rating" id="satisfied" value="satisfied" required/>
               <BsFillEmojiSmileFill />
               <p>Bom</p>
             </span>
             <span>
-              <input type="radio" name="unsatisfied" id="unsatisfied" />
+              <input type="radio" name="rating" id="verySatisfied" value="verySatisfied" required/>
               <BsFillEmojiHeartEyesFill />
               <p>Excelente</p>
             </span>
@@ -63,7 +64,7 @@ const Avaliacao = () => {
 
         <Home.buttonContent>
           <Home.buttonAvancar onClick={(e) => handleClick(e)}>Voltar</Home.buttonAvancar>
-          <Home.buttonAvancar onClick={(e) => handleNextPage(e)}>Avançar</Home.buttonAvancar>
+          <Home.buttonAvancar type='submit'>Avançar</Home.buttonAvancar>
         </Home.buttonContent>
       </Home.FormContainer>
     </Home.Content>
