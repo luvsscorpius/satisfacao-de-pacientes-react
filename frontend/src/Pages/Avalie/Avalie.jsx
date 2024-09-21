@@ -29,31 +29,31 @@ export const Avalie = () => {
 
                     <A.blocksContent>
                         <span>
-                            <input type="radio" name="rating" id="1" value="1" />
+                            <input type="radio" name="rating" id="1" value="1" required />
                             <p>
                                 1
                             </p>
                         </span>
                         <span>
-                            <input type="radio" name="rating" id="2" value="2" />
+                            <input type="radio" name="rating" id="2" value="2" required />
                             <p>
                                 2
                             </p>
                         </span>
                         <span>
-                            <input type="radio" name="rating" id="3" value="3" />
+                            <input type="radio" name="rating" id="3" value="3" required />
                             <p>
                                 3
                             </p>
                         </span>
                         <span>
-                            <input type="radio" name="rating" id="4" value="4" />
+                            <input type="radio" name="rating" id="4" value="4" required/>
                             <p>
                                 4
                             </p>
                         </span>
                         <span>
-                            <input type="radio" name="rating" id="5" value="5" />
+                            <input type="radio" name="rating" id="5" value="5" required />
                             <p>
                                 5
                             </p>
