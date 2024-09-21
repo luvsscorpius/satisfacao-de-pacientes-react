@@ -1,7 +1,7 @@
 import React from 'react'
 import * as S from './Styles'
-import { FaUser, FaRegStar } from "react-icons/fa";
-import { BsSend } from "react-icons/bs";
+import { FaUser, FaStar } from "react-icons/fa";
+import { RiSendPlaneFill } from "react-icons/ri";
 
 export const Steps = ({currentStep}) => {
 
@@ -13,11 +13,11 @@ export const Steps = ({currentStep}) => {
             </S.Step>
             {/* usando concatenacao de strings pois no macbook `` nao funciona */}
             <S.Step className={'step ' + (currentStep >= 1 ? "active" : "")}>
-                <FaRegStar className='icon star' />
+                <FaStar className='icon star' />
                 <p>Avaliação</p>
             </S.Step>
             <S.Step className={'step ' + (currentStep >= 2 ? "active" : "")}>
-                <BsSend className='icon' />
+                <RiSendPlaneFill className='icon' />
                 <p>Envio</p>
             </S.Step>
         </S.Steps>
