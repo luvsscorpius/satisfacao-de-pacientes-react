@@ -4,6 +4,8 @@ export const divP = styled.div`
     width: 625px;
     height: 30px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 
     p {
         display: flex;
