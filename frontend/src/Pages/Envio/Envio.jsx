@@ -6,9 +6,10 @@ import { Context } from '../../Context/Context'
 import * as Avalie from '../Avalie/Styles'
 import * as E from './Styles'
 import { useNavigate } from 'react-router-dom'
+import { BsFillEmojiFrownFill, BsFillEmojiHeartEyesFill, BsFillEmojiNeutralFill, BsFillEmojiSmileFill } from 'react-icons/bs'
 
 export const Envio = () => {
-    const { currentStep, changeStep } = useContext(Context)
+    const { currentStep, changeStep, data } = useContext(Context)
 
     const navigate = useNavigate()
 
@@ -17,6 +18,14 @@ export const Envio = () => {
         changeStep(currentStep - 1, e)
         navigate('/avaliacao/avalie')
     }
+
+    // Objeto com os emojis para fazer a comparação e recuperar do usuário
+    const emojiData = {
+        unsatisfied: <BsFillEmojiFrownFill/>,
+        neutral: <BsFillEmojiNeutralFill/>,
+        satisfied: <BsFillEmojiSmileFill/>,
+        verySatisfied: <BsFillEmojiHeartEyesFill/>
+      }
 
   return (
     <Home.Content>
@@ -33,9 +42,9 @@ export const Envio = () => {
 
                 <E.resumoContent>
                     <h3>Aqui está o resumo da sua avaliação</h3>
-                    <p>Satisfação da sessão:</p>
-                    <p>Comentário:</p>
-                    <p>Quanto voltaria na próxima sessão:</p>
+                    <p>Satisfação da sessão: {emojiData[data.review]}</p>
+                    <p>Comentário: {data.comment}</p>
+                    <p>Quanto voltaria na próxima sessão: {data.comeback}</p>
                 </E.resumoContent>
             </Home.inputContainer>
 

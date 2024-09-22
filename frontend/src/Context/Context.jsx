@@ -3,7 +3,7 @@ import React, {createContext, useState} from "react";
 export const Context = createContext(null)
 
 export const ContextProvider = ({children, formComponents}) => {
-    const [data, setData] = useState({name: "", email: ""})
+    const [data, setData] = useState({name: "", email: "", review: "", comment: "", comeback: ""})
     const [isChecked, setIsChecked] = useState(false)
     const [isRequired, setIsRequired] = useState(true)
 

@@ -4,12 +4,12 @@ import { Info } from '../../Components/Info/Info'
 import { Steps } from '../../Components/Steps/Steps'
 import * as A from './Styles'
 import { useNavigate } from 'react-router-dom'
-import { BsFillEmojiHeartEyesFill, BsFillEmojiSmileFill, BsFillEmojiNeutralFill, BsFillEmojiFrownFill, BsEmojiFrownFill } from 'react-icons/bs'
+import { BsFillEmojiHeartEyesFill, BsFillEmojiSmileFill, BsFillEmojiNeutralFill, BsFillEmojiFrownFill } from 'react-icons/bs'
 import { Context } from '../../Context/Context'
 
 const Avaliacao = () => {
 
-  const { currentStep, changeStep, data } = useContext(Context)
+  const { currentStep, changeStep, data, setData } = useContext(Context)
 
   console.log(data)
 
@@ -37,22 +37,22 @@ const Avaliacao = () => {
         <Home.inputContainer>
           <A.rateContent>
             <span>
-              <input type="radio" name="rating" id="unsatisfied" value="unsatisfied" required/>
-              <BsEmojiFrownFill />
+              <input type="radio" name="rating" id="unsatisfied" value="unsatisfied" checked={data.review === "unsatisfied"} required onChange={(e) => setData((prev) => ({...prev, review: e.target.value}))}/>
+              <BsFillEmojiFrownFill />
               <p>Ruim</p>
             </span>
             <span>
-              <input type="radio" name="rating" id="neutral" value="neutral" required/>
+              <input type="radio" name="rating" id="neutral" value="neutral" checked={data.review === "neutral"} required onChange={(e) => setData((prev) => ({...prev, review: e.target.value}))}/>
               <BsFillEmojiNeutralFill />
               <p>Regular</p>
             </span>
             <span>
-              <input type="radio" name="rating" id="satisfied" value="satisfied" required/>
+              <input type="radio" name="rating" id="satisfied" value="satisfied" checked={data.review === "satisfied"} required onChange={(e) => setData((prev) => ({...prev, review: e.target.value}))}/>
               <BsFillEmojiSmileFill />
               <p>Bom</p>
             </span>
             <span>
-              <input type="radio" name="rating" id="verySatisfied" value="verySatisfied" required/>
+              <input type="radio" name="rating" id="verySatisfied" value="verySatisfied" checked={data.review === "verySatisfied"} required onChange={(e) => setData((prev) => ({...prev, review: e.target.value}))}/>
               <BsFillEmojiHeartEyesFill />
               <p>Excelente</p>
             </span>
@@ -60,7 +60,7 @@ const Avaliacao = () => {
 
           <A.textAreaContent>
             <label htmlFor="">Comentario:</label>
-            <textarea name="textarea" placeholder='Nos conte como foi a sua experiência...' rows="3" cols="3"></textarea>
+            <textarea name="textarea" placeholder='Nos conte como foi a sua experiência...' rows="3" cols="3" value={data.comment || ""} onChange={(e) => setData((prev) => ({...prev, comment: e.target.value}))}></textarea>
           </A.textAreaContent>
         </Home.inputContainer>
 
