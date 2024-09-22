@@ -3,7 +3,7 @@ import React, {createContext, useState} from "react";
 export const Context = createContext(null)
 
 export const ContextProvider = ({children, formComponents}) => {
-    const [userInfo, setUserInfo] = useState([])
+    const [data, setData] = useState({name: "", email: ""})
     const [isChecked, setIsChecked] = useState(false)
     const [isRequired, setIsRequired] = useState(true)
 
@@ -22,7 +22,7 @@ export const ContextProvider = ({children, formComponents}) => {
 
     console.log("O passo: ", currentStep)
 
-    const contextValue = {userInfo, setUserInfo, isChecked, setIsChecked, isRequired, setIsRequired, currentStep, setCurrentStep, changeStep}
+    const contextValue = {data, setData, isChecked, setIsChecked, isRequired, setIsRequired, currentStep, setCurrentStep, changeStep}
     return (
         <Context.Provider value={contextValue}>
             {children}

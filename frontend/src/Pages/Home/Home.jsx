@@ -6,11 +6,9 @@ import { Steps } from '../../Components/Steps/Steps';
 import { Context } from '../../Context/Context';
 
 export const Home = () => {
-    const { userInfo, setUserInfo, isChecked, setIsChecked, isRequired, setIsRequired, currentStep, changeStep } = useContext(Context)
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
+    const { data, setData, isChecked, setIsChecked, isRequired, setIsRequired, currentStep, changeStep } = useContext(Context)
 
-    console.log(currentStep)
+    console.log(data)
 
     const navigate = useNavigate()
 
@@ -24,7 +22,7 @@ export const Home = () => {
             navigate("/avaliacao")
         }
 
-        if (name && email) {
+        if (data.name && data.email) {
             // Enviando as informações
             changeStep(currentStep + 1, e)
             navigate('/avaliacao')
@@ -48,12 +46,12 @@ export const Home = () => {
                 <H.inputContainer>
                     <H.labelContent>
                         <label htmlFor="name">Nome:</label>
-                        <input type="text" name="name" id="name" value={name} onChange={(e) => setName(e.target.value)} required={isRequired} />
+                        <input type="text" name="name" id="name" value={data.name || ""} onChange={(e) => setData((prev) => ({...prev, name: e.target.value}))} required={isRequired} />
                     </H.labelContent>
 
                     <H.labelContent>
                         <label htmlFor="email">Email:</label>
-                        <input type="email" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} required={isRequired} />
+                        <input type="email" name="email" id="email" value={data.email || ""} onChange={(e) => setData((prev) => ({...prev, email: e.target.value}))} required={isRequired} />
                     </H.labelContent>
 
                     <H.checkContent>

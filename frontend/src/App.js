@@ -20,19 +20,19 @@ function App() {
 
   return (
     <>
-      <GlobalStyle/>
+      <GlobalStyle />
       <Header />
-      <Router>
-        <ContextProvider formComponents={formComponents}>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/avaliacao' element={<Avaliacao/>}/>
-          <Route path='/avaliacao/avalie' element={<Avalie/>}/> 
-          <Route path='/avaliacao/envio' element={<Envio/>}/>
-        </Routes>
-        </ContextProvider>
-      </Router>
-      <Footer/>
+      <ContextProvider formComponents={formComponents}>
+        <Router>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/avaliacao' element={<Avaliacao />} />
+            <Route path='/avaliacao/avalie' element={<Avalie />} />
+            <Route path='/avaliacao/envio' element={<Envio />} />
+          </Routes>
+        </Router>
+      </ContextProvider>
+      <Footer />
     </>
   );
 }

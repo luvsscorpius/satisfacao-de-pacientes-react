@@ -9,7 +9,9 @@ import { Context } from '../../Context/Context'
 
 const Avaliacao = () => {
 
-  const { currentStep, changeStep } = useContext(Context)
+  const { currentStep, changeStep, data } = useContext(Context)
+
+  console.log(data)
 
   const navigate = useNavigate()
 
