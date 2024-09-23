@@ -23,6 +23,7 @@ const Avaliacao = () => {
 
   const handleNextPage = (e) => {
     e.preventDefault()
+    changeStep(currentStep + 1, e)
     navigate("/avaliacao/avalie")
   }
 

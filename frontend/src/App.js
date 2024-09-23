@@ -8,6 +8,7 @@ import Avaliacao from './Pages/Avaliacao/Avaliacao';
 import { ContextProvider } from './Context/Context';
 import { Avalie } from './Pages/Avalie/Avalie';
 import { Envio } from './Pages/Envio/Envio';
+import { ProtectedRoute } from './Routes/ProtectedRoute';
 
 function App() {
 
@@ -26,9 +27,9 @@ function App() {
         <Router>
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/avaliacao' element={<Avaliacao />} />
-            <Route path='/avaliacao/avalie' element={<Avalie />} />
-            <Route path='/avaliacao/envio' element={<Envio />} />
+            <Route path='/avaliacao' element={<ProtectedRoute stepRequired={0}><Avaliacao /></ProtectedRoute>} />
+            <Route path='/avaliacao/avalie' element={<ProtectedRoute stepRequired={1}><Avalie /></ProtectedRoute>} />
+            <Route path='/avaliacao/envio' element={<ProtectedRoute stepRequired={2}><Envio /></ProtectedRoute>} />
           </Routes>
         </Router>
       </ContextProvider>
