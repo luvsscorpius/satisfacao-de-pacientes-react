@@ -2,12 +2,16 @@ import React from 'react'
 import * as Home from '../Home/Styles'
 import * as F from './Styles'
 import { FaArrowLeft } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
 
 export const ForgotPassword = () => {
+
+    const navigate = useNavigate()
+
   return (
     <Home.Content>
         <F.Info>
-            <span>
+            <span onClick={() => navigate('/login')}>
                 <FaArrowLeft/>
                 <p>Voltar</p>
             </span>
