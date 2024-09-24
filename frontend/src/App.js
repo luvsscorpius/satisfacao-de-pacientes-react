@@ -9,6 +9,7 @@ import { ContextProvider } from './Context/Context';
 import { Avalie } from './Pages/Avalie/Avalie';
 import { Envio } from './Pages/Envio/Envio';
 import { ProtectedRoute } from './Routes/ProtectedRoute';
+import { Login } from './Pages/Login/Login';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
             <Route path='/avaliacao' element={<ProtectedRoute stepRequired={0}><Avaliacao /></ProtectedRoute>} />
             <Route path='/avaliacao/avalie' element={<ProtectedRoute stepRequired={1}><Avalie /></ProtectedRoute>} />
             <Route path='/avaliacao/envio' element={<ProtectedRoute stepRequired={2}><Envio /></ProtectedRoute>} />
+            <Route path='/login' element={<Login/>}/>
           </Routes>
         </Router>
       </ContextProvider>

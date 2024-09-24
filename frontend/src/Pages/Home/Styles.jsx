@@ -77,6 +77,18 @@ export const buttonContent = styled.div`
     display: flex;
     justify-content: flex-end;
     gap: 10px;
+
+    p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s;
+    }
+
+    p:hover {
+        cursor: pointer;
+        color: #457B9D;
+    }
 `
 
 export const buttonAvancar = styled.button`
