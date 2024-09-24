@@ -18,7 +18,7 @@ export const Info = styled.div`
         gap: 5px;
         padding-top: 10px;
         opacity: 1;
-        margin-left: 5px;
+        margin-left: 20px;
         width: 9%;
 
         p {

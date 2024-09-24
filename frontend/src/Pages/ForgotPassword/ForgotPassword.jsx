@@ -14,6 +14,23 @@ export const ForgotPassword = () => {
 
             <h1>Redefinicao de senha!</h1>
         </F.Info>
+
+        <Home.FormContainer>
+            <Home.inputContainer>
+                <Home.labelContent>
+                    <p>Para redefinir sua senha, informe o e-mail cadastrado na sua conta e lhe enviaremos um link com as instruções.</p>
+                </Home.labelContent>
+
+                <Home.labelContent>
+                    <label htmlFor="email">Email:</label>
+                    <input type="email" name="email" id="email" placeholder='E-mail cadastrado'/>
+                </Home.labelContent>
+            </Home.inputContainer>
+
+            <Home.buttonContent>
+                <Home.buttonAvancar style={{width: '244px'}}>Enviar link de recuperação</Home.buttonAvancar>
+            </Home.buttonContent>
+        </Home.FormContainer>
     </Home.Content>
   )
 }
