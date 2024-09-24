@@ -29,22 +29,18 @@ export const Envio = () => {
 
   return (
     <Home.Content>
-        <Info titulo="Deixe sua avaliação" p="Ficamos felizes com a sua sessão, utilize o formulário abaixo para avaliar a sessão" />
+        <Info titulo="Falta pouco..." p="A sua opinião é muito importante" />
 
         <Home.FormContainer>
             <Steps currentStep={currentStep}/>
 
-            <Home.inputContainer>
-                <Avalie.divP>
-                    <h2>Falta pouco...</h2>
-                    <p>A sua opinião é muito importante</p>
-                </Avalie.divP>
+            <Home.inputContainer style={{gap: "5px"}}>
 
-                <E.resumoContent>
+                <E.resumoContent style={{display: "flex"}}>
                     <h3>Aqui está o resumo da sua avaliação</h3>
-                    <p>Satisfação da sessão: {emojiData[data.review]}</p>
-                    <p>Comentário: {data.comment}</p>
-                    <p>Quanto voltaria na próxima sessão: {data.comeback}</p>
+                    <p>Satisfação da sessão:  {emojiData[data.review]}</p>
+                    <p>Comentário:  {data.comment}</p>
+                    <p>Quanto voltaria na próxima sessão:  {data.comeback}</p>
                 </E.resumoContent>
             </Home.inputContainer>
 

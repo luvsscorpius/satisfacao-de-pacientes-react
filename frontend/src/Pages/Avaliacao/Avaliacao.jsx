@@ -61,7 +61,7 @@ const Avaliacao = () => {
 
           <A.textAreaContent>
             <label htmlFor="">Comentario:</label>
-            <textarea name="textarea" placeholder='Nos conte como foi a sua experiência...' rows="3" cols="3" value={data.comment || ""} onChange={(e) => setData((prev) => ({...prev, comment: e.target.value}))}></textarea>
+            <textarea name="textarea" maxLength="70" placeholder='Nos conte como foi a sua experiência...' rows="3" cols="3" value={data.comment || ""} onChange={(e) => setData((prev) => ({...prev, comment: e.target.value}))}></textarea>
           </A.textAreaContent>
         </Home.inputContainer>
 
