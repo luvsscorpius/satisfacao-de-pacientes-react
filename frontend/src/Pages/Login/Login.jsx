@@ -1,8 +1,12 @@
 import React from 'react'
 import * as Home from '../Home/Styles'
 import * as L from './Styles'
+import { useNavigate } from 'react-router-dom'
 
 export const Login = () => {
+
+    const navigate = useNavigate()
+
     return (
         <Home.Content>
             <L.Info>
@@ -27,7 +31,7 @@ export const Login = () => {
                 </Home.inputContainer>
 
                 <Home.buttonContent>
-                    <p>Esqueceu a senha?</p>
+                    <p onClick={() => navigate('/login/forgotpassword')}>Esqueceu a senha?</p>
                     <Home.buttonAvancar type='submit'>Fazer login</Home.buttonAvancar>
                 </Home.buttonContent>
             </Home.FormContainer>
