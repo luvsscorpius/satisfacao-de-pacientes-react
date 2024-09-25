@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom'
 import { BsFillEmojiFrownFill, BsFillEmojiHeartEyesFill, BsFillEmojiNeutralFill, BsFillEmojiSmileFill } from 'react-icons/bs'
 
 export const Envio = () => {
-    const { currentStep, changeStep, data } = useContext(Context)
+    const { currentStep, changeStep, data, sendInfo } = useContext(Context)
 
     const navigate = useNavigate()
 
@@ -46,7 +46,7 @@ export const Envio = () => {
 
             <Home.buttonContent>
                 <Home.buttonAvancar onClick={(e) => previousPage(e)}>Voltar</Home.buttonAvancar>
-                <Home.buttonAvancar>Enviar</Home.buttonAvancar>
+                <Home.buttonAvancar onClick={(e) => sendInfo(e)}>Enviar</Home.buttonAvancar>
             </Home.buttonContent>
         </Home.FormContainer>
     </Home.Content>

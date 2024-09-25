@@ -1,4 +1,5 @@
 import React, {createContext, useState} from "react";
+import axios from 'axios'
 
 export const Context = createContext(null)
 
@@ -20,9 +21,25 @@ export const ContextProvider = ({children, formComponents}) => {
         setCurrentStep(i)
     }
 
+    // Logica para enviar as informações para o backend
+    const sendInfo = async (e) => {
+        e.preventDefault()
+        console.log('Enviei')
+        console.log(data)
+
+        try {
+           const response = await axios.put("http://localhost:2000/createFeedBack", data, {
+                headers: { 'Content-Type': 'application/json' }
+            })
+
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
     console.log("O passo: ", currentStep)
 
-    const contextValue = {data, setData, isChecked, setIsChecked, isRequired, setIsRequired, currentStep, setCurrentStep, changeStep}
+    const contextValue = {data, setData, isChecked, setIsChecked, isRequired, setIsRequired, currentStep, setCurrentStep, changeStep, sendInfo}
     return (
         <Context.Provider value={contextValue}>
             {children}
