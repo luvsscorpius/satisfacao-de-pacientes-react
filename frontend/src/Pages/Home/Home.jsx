@@ -20,12 +20,16 @@ export const Home = () => {
 
         if (isChecked === true) {
             changeStep(currentStep + 1, e)
+            // Lógica para verificar se o usuário quer se identificar ou nao e setando um tipo diferente no array sem info como nome/email
+            setData({ isAnonymous: isChecked, review: "", comment: "", comeback: "" })
             navigate("/avaliacao")
         }
 
         if (data.name && data.email) {
             // Enviando as informações
             changeStep(currentStep + 1, e)
+            // Lógica para verificar se o usuário quer se identificar ou nao e setando um tipo diferente no array com info como nome/email
+            setData({isAnonymous: isChecked, name: "", email: "", review: "", comment: "", comeback: "" })
             navigate('/avaliacao')
         }
     }
@@ -49,12 +53,12 @@ export const Home = () => {
                 <H.inputContainer>
                     <H.labelContent>
                         <label htmlFor="name">Nome:</label>
-                        <input type="text" name="name" id="name" value={data.name || ""} onChange={(e) => setData((prev) => ({...prev, name: e.target.value}))} required={isRequired} readOnly={isReadOnly} />
+                        <input type="text" name="name" id="name" value={data.name || ""} onChange={(e) => setData((prev) => ({ ...prev, name: e.target.value }))} required={isRequired} readOnly={isReadOnly} />
                     </H.labelContent>
 
                     <H.labelContent>
                         <label htmlFor="email">Email:</label>
-                        <input type="email" name="email" id="email" value={data.email || ""} onChange={(e) => setData((prev) => ({...prev, email: e.target.value}))} required={isRequired} readOnly={isReadOnly} />
+                        <input type="email" name="email" id="email" value={data.email || ""} onChange={(e) => setData((prev) => ({ ...prev, email: e.target.value }))} required={isRequired} readOnly={isReadOnly} />
                     </H.labelContent>
 
                     <H.checkContent>

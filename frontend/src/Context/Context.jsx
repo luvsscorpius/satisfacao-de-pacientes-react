@@ -4,10 +4,10 @@ import axios from 'axios'
 export const Context = createContext(null)
 
 export const ContextProvider = ({children, formComponents}) => {
-    const [data, setData] = useState({name: "", email: "", review: "", comment: "", comeback: ""})
     const [isChecked, setIsChecked] = useState(false)
     const [isRequired, setIsRequired] = useState(true)
     const [isReadOnly, setIsReadOnly] = useState(false)
+    const [data, setData] = useState({isAnonymous: isChecked, name: "", email: "", review: "", comment: "", comeback: ""})
 
     const [currentStep, setCurrentStep] = useState(0)
 
