@@ -11,6 +11,8 @@ import { Envio } from './Pages/Envio/Envio';
 import { ProtectedRoute } from './Routes/ProtectedRoute';
 import { Login } from './Pages/Login/Login';
 import { ForgotPassword } from './Pages/ForgotPassword/ForgotPassword';
+import { ToastContainer } from 'react-toastify'
+import "react-toastify/dist/ReactToastify.css"
 
 function App() {
 
@@ -26,14 +28,15 @@ function App() {
       <GlobalStyle />
       <Header />
       <ContextProvider formComponents={formComponents}>
+      <ToastContainer autoClose={3000} className="toast-container" />
         <Router>
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/avaliacao' element={<ProtectedRoute stepRequired={0}><Avaliacao /></ProtectedRoute>} />
             <Route path='/avaliacao/avalie' element={<ProtectedRoute stepRequired={1}><Avalie /></ProtectedRoute>} />
             <Route path='/avaliacao/envio' element={<ProtectedRoute stepRequired={2}><Envio /></ProtectedRoute>} />
-            <Route path='/login' element={<Login/>}/>
-            <Route path='/login/forgotpassword' element={<ForgotPassword/>}/>
+            <Route path='/login' element={<Login />} />
+            <Route path='/login/forgotpassword' element={<ForgotPassword />} />
           </Routes>
         </Router>
       </ContextProvider>
