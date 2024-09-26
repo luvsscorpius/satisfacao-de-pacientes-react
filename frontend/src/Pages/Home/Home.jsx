@@ -28,8 +28,6 @@ export const Home = () => {
         if (data.name && data.email) {
             // Enviando as informações
             changeStep(currentStep + 1, e)
-            // Lógica para verificar se o usuário quer se identificar ou nao e setando um tipo diferente no array com info como nome/email
-            setData({isAnonymous: isChecked, name: "", email: "", review: "", comment: "", comeback: "" })
             navigate('/avaliacao')
         }
     }
