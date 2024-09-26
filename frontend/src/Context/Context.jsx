@@ -7,6 +7,7 @@ export const ContextProvider = ({children, formComponents}) => {
     const [data, setData] = useState({name: "", email: "", review: "", comment: "", comeback: ""})
     const [isChecked, setIsChecked] = useState(false)
     const [isRequired, setIsRequired] = useState(true)
+    const [isReadOnly, setIsReadOnly] = useState(false)
 
     const [currentStep, setCurrentStep] = useState(0)
 
@@ -39,7 +40,19 @@ export const ContextProvider = ({children, formComponents}) => {
 
     console.log("O passo: ", currentStep)
 
-    const contextValue = {data, setData, isChecked, setIsChecked, isRequired, setIsRequired, currentStep, setCurrentStep, changeStep, sendInfo}
+    const contextValue = {
+        data, 
+        setData, 
+        isChecked, 
+        setIsChecked, 
+        isRequired, 
+        setIsRequired, 
+        currentStep, 
+        setCurrentStep, 
+        changeStep, 
+        sendInfo,
+        isReadOnly,
+        setIsReadOnly}
     return (
         <Context.Provider value={contextValue}>
             {children}

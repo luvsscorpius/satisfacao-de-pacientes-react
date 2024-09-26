@@ -6,9 +6,10 @@ import { Steps } from '../../Components/Steps/Steps';
 import { Context } from '../../Context/Context';
 
 export const Home = () => {
-    const { data, setData, isChecked, setIsChecked, isRequired, setIsRequired, currentStep, changeStep } = useContext(Context)
+    const { data, setData, isChecked, setIsChecked, isRequired, setIsRequired, currentStep, changeStep, isReadOnly, setIsReadOnly } = useContext(Context)
 
     console.log(data)
+    console.log(isReadOnly)
 
     const navigate = useNavigate()
 
@@ -33,6 +34,8 @@ export const Home = () => {
         setIsChecked(prevState => !prevState)
         // Usando setIsRequired para fazer o toggle de true/false ou vise versa para corrigir o erro de quando colocar o checkIsChecked no onSubmit ele permitir passar para a proxima pagina sendo anonimo
         setIsRequired(prevState => !prevState)
+        // Lógica para deixar o input disponivel/indisponivel para digitar caso o usuário deseje se identificar ou nao
+        setIsReadOnly(prevState => !prevState)
     }
 
     return (
@@ -46,12 +49,12 @@ export const Home = () => {
                 <H.inputContainer>
                     <H.labelContent>
                         <label htmlFor="name">Nome:</label>
-                        <input type="text" name="name" id="name" value={data.name || ""} onChange={(e) => setData((prev) => ({...prev, name: e.target.value}))} required={isRequired} />
+                        <input type="text" name="name" id="name" value={data.name || ""} onChange={(e) => setData((prev) => ({...prev, name: e.target.value}))} required={isRequired} readOnly={isReadOnly} />
                     </H.labelContent>
 
                     <H.labelContent>
                         <label htmlFor="email">Email:</label>
-                        <input type="email" name="email" id="email" value={data.email || ""} onChange={(e) => setData((prev) => ({...prev, email: e.target.value}))} required={isRequired} />
+                        <input type="email" name="email" id="email" value={data.email || ""} onChange={(e) => setData((prev) => ({...prev, email: e.target.value}))} required={isRequired} readOnly={isReadOnly} />
                     </H.labelContent>
 
                     <H.checkContent>
