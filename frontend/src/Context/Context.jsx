@@ -41,6 +41,8 @@ export const ContextProvider = ({children, formComponents}) => {
                 toast.success('Feedback enviado com sucesso')
                 navigate('/')
                 setCurrentStep(0)
+            } else {
+                toast.error('Ocorreu algum erro, tente novamente em alguns instantes')
             }
         } catch (error) {
             console.error(error)
