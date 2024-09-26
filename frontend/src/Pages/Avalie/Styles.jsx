@@ -37,12 +37,13 @@ export const blocksContent = styled.div`
             align-items: center;
             font-size: 1.2rem;
             width: 100%;
+            height: 100%;
         }
 
         input {
             opacity: 0;
             position: absolute;
-            width: 15px;
+            width: 20px;
             cursor: pointer;
         }
 
