@@ -1,5 +1,7 @@
 import React, {createContext, useState} from "react";
 import axios from 'axios'
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 export const Context = createContext(null)
 
@@ -10,6 +12,8 @@ export const ContextProvider = ({children, formComponents}) => {
     const [data, setData] = useState({isAnonymous: isChecked, name: "", email: "", review: "", comment: "", comeback: ""})
 
     const [currentStep, setCurrentStep] = useState(0)
+
+    const navigate = useNavigate()
 
     // Lógica no botao para avançar e mudar o currentStep
     const changeStep = (i, e) => {
@@ -33,7 +37,11 @@ export const ContextProvider = ({children, formComponents}) => {
                 headers: { 'Content-Type': 'application/json' }
             })
 
-            console.log(response)
+            if (response.status === 201) {
+                toast.success('Feedback enviado com sucesso')
+                navigate('/')
+                setCurrentStep(0)
+            }
         } catch (error) {
             console.error(error)
         }

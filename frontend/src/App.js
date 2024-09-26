@@ -27,9 +27,9 @@ function App() {
     <>
       <GlobalStyle />
       <Header />
-      <ContextProvider formComponents={formComponents}>
       <ToastContainer autoClose={3000} className="toast-container" />
-        <Router>
+      <Router>
+        <ContextProvider formComponents={formComponents}>
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/avaliacao' element={<ProtectedRoute stepRequired={0}><Avaliacao /></ProtectedRoute>} />
@@ -38,8 +38,8 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/login/forgotpassword' element={<ForgotPassword />} />
           </Routes>
-        </Router>
-      </ContextProvider>
+        </ContextProvider>
+      </Router>
       <Footer />
     </>
   );
