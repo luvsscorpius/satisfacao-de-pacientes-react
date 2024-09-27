@@ -64,6 +64,8 @@ export const ContextProvider = ({children, formComponents}) => {
             } else {
                 const token = response.data.token
                 axios.defaults.headers.common["Authorization"] = `Bearer ${token}`
+
+                navigate("/adm")
             }
         } catch (error) {
             console.error(error)
