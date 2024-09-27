@@ -8,9 +8,11 @@ app.use(cors())
 
 // Importando as rotas
 const createFeedBack = require('./Routes/createFeedBack')
+const login = require('./Routes/login')
 
 // Usando as rotas
 app.use('/createFeedBack', createFeedBack)
+app.use('/login', login)
 
 app.listen(port, () => {
     console.log('Servidor rodando na porta', port)

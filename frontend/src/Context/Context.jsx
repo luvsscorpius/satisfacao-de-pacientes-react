@@ -51,9 +51,23 @@ export const ContextProvider = ({children, formComponents}) => {
     }
 
     // Funcao para login na pagina de adm da psicologa
-    const handleLogin = (e) => {
+    const handleLogin = async (e) => {
         e.preventDefault()
         console.log(loginData)
+
+        try {
+            const response = await axios.post('http://localhost:2000/login', {loginData}, 
+                { headers: { 'Content-Type': 'application/json' }})
+
+            if (response.data.error){
+                toast.error(response.data.error)
+            } else {
+                const token = response.data.token
+                axios.defaults.headers.common["Authorization"] = `Bearer ${token}`
+            }
+        } catch (error) {
+            console.error(error)
+        }
     }
 
     console.log("O passo: ", currentStep)
