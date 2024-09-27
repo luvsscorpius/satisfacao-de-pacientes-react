@@ -10,6 +10,7 @@ export const ContextProvider = ({children, formComponents}) => {
     const [isRequired, setIsRequired] = useState(true)
     const [isReadOnly, setIsReadOnly] = useState(false)
     const [data, setData] = useState({isAnonymous: isChecked, name: "", email: "", review: "", comment: "", comeback: ""})
+    const [loginData, setLoginData] = useState({username: "", password: ""})
 
     const [currentStep, setCurrentStep] = useState(0)
 
@@ -49,6 +50,12 @@ export const ContextProvider = ({children, formComponents}) => {
         }
     }
 
+    // Funcao para login na pagina de adm da psicologa
+    const handleLogin = (e) => {
+        e.preventDefault()
+        console.log(loginData)
+    }
+
     console.log("O passo: ", currentStep)
 
     const contextValue = {
@@ -63,7 +70,10 @@ export const ContextProvider = ({children, formComponents}) => {
         changeStep, 
         sendInfo,
         isReadOnly,
-        setIsReadOnly}
+        setIsReadOnly,
+        handleLogin,
+        loginData,
+        setLoginData}
     return (
         <Context.Provider value={contextValue}>
             {children}
