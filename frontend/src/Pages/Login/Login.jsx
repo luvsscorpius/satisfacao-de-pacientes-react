@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import * as Home from '../Home/Styles'
 import * as L from './Styles'
 import { useNavigate } from 'react-router-dom'

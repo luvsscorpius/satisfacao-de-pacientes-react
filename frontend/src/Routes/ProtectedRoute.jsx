@@ -24,7 +24,7 @@ export const ProtectedRoute = ({children, stepRequired}) => {
             // Se currentStep for 2, ele retornara '/avaliacao/avalie' e assim por diante
             console.log(stepRoutes[currentStep])
             navigate(stepRoutes[currentStep])
-        }
+        } 
     }, [currentStep, stepRequired, navigate])
 
     // Se o currentStep for maior ou = ao stepRequired ele retorna os filhos que seriam as rotas, caso contrário retorna null

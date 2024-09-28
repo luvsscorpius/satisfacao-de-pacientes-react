@@ -14,6 +14,7 @@ import { ForgotPassword } from './Pages/ForgotPassword/ForgotPassword';
 import { ToastContainer } from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css"
 import { Adm } from './Pages/Adm/Adm';
+import { ProtectedRouteLogin } from './Routes/ProtectedRouteLogin';
 
 function App() {
 
@@ -38,7 +39,7 @@ function App() {
             <Route path='/avaliacao/envio' element={<ProtectedRoute stepRequired={2}><Envio /></ProtectedRoute>} />
             <Route path='/login' element={<Login />} />
             <Route path='/login/forgotpassword' element={<ForgotPassword />} />
-            <Route path='/adm' element={<Adm/>}/>
+            <Route path='/adm' element={<ProtectedRouteLogin><Adm/> </ProtectedRouteLogin>}/>
           </Routes>
         </ContextProvider>
       </Router>
