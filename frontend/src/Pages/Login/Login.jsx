@@ -5,8 +5,10 @@ import { useNavigate } from 'react-router-dom'
 import { Context } from '../../Context/Context'
 
 export const Login = () => {
-    const {handleLogin, loginData, setLoginData} = useContext(Context)
+    const {handleLogin, loginData, setLoginData, isLembrarMe, setIsLembrarMe} = useContext(Context)
     const navigate = useNavigate()
+
+    console.log(isLembrarMe)
 
     return (
         <Home.Content>
@@ -26,7 +28,7 @@ export const Login = () => {
                     </Home.labelContent>
 
                     <Home.checkContent>
-                        <input type="checkbox" name="" id="" />
+                        <input type="checkbox" name="lembrarme" id="lembrarme" value={isLembrarMe} onChange={(e) => setIsLembrarMe(prevState => !prevState)} />
                         <label htmlFor="check">Lembrar-me</label>
                     </Home.checkContent>
                 </Home.inputContainer>

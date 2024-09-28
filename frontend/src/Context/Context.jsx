@@ -11,6 +11,7 @@ export const ContextProvider = ({children, formComponents}) => {
     const [isReadOnly, setIsReadOnly] = useState(false)
     const [data, setData] = useState({isAnonymous: isChecked, name: "", email: "", review: "", comment: "", comeback: ""})
     const [loginData, setLoginData] = useState({username: "", password: ""})
+    const [isLembrarMe, setIsLembrarMe] = useState(false)
 
     const [currentStep, setCurrentStep] = useState(0)
 
@@ -57,6 +58,10 @@ export const ContextProvider = ({children, formComponents}) => {
 
         if (loginData.username === "" && loginData.password === "") {
             toast.warning('Preencha as informações')
+        } 
+
+        if (isLembrarMe) {
+            localStorage.setItem("@:user", JSON.stringify(loginData))
         }
 
         try {
@@ -66,7 +71,6 @@ export const ContextProvider = ({children, formComponents}) => {
             if (response.status === 200){
                 const token = response.data.token
                 axios.defaults.headers.common["Authorization"] = `Bearer ${token}`
-
                 navigate("/adm")
             }
         } catch (error) {
@@ -95,7 +99,9 @@ export const ContextProvider = ({children, formComponents}) => {
         setIsReadOnly,
         handleLogin,
         loginData,
-        setLoginData}
+        setLoginData,
+        isLembrarMe,
+        setIsLembrarMe}
     return (
         <Context.Provider value={contextValue}>
             {children}
