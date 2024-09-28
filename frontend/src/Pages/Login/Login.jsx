@@ -18,7 +18,7 @@ export const Login = () => {
                 <Home.inputContainer>
                     <Home.labelContent>
                         <label htmlFor="user">Nome de usuário:</label>
-                        <input type="text" name="user" id="user" value={loginData.username || ''} onChange={(e) => setLoginData((prev) => ({...prev, password: e.target.value}))} />
+                        <input type="text" name="user" id="user" value={loginData.username || ''} onChange={(e) => setLoginData((prev) => ({...prev, username: e.target.value}))} />
                     </Home.labelContent>
                     <Home.labelContent>
                         <label htmlFor="password">Senha:</label>
