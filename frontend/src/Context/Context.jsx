@@ -63,16 +63,18 @@ export const ContextProvider = ({children, formComponents}) => {
             const response = await axios.post('http://localhost:2000/login', {loginData}, 
                 { headers: { 'Content-Type': 'application/json' }})
 
-            if (response.data.error){
-                toast.error(response.data.error)
-            } else {
+            if (response.status === 200){
                 const token = response.data.token
                 axios.defaults.headers.common["Authorization"] = `Bearer ${token}`
 
                 navigate("/adm")
             }
         } catch (error) {
-            console.error(error)
+            if (error.status === 401) {
+                toast.error('Invalid credentials')
+            } else {
+                toast.error(error)
+            }
         }
     }
 
