@@ -8,6 +8,10 @@ export const Footer = styled.footer`
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+    @media (max-width: 724px) {
+        height: 300px;
+    }
 `
 
 export const lineUp = styled.div`
@@ -17,7 +21,7 @@ export const lineUp = styled.div`
     margin: 0 auto;
 
     @media (max-width: 724px) {
-        width: 90%;    
+        width: 204px;    
     }
 `
 
@@ -28,7 +32,7 @@ export const lineDown = styled.div`
     margin: 0 auto;
 
     @media (max-width: 724px) {
-        width: 90%;    
+        width: 204px;    
     }
 `
 
@@ -49,6 +53,10 @@ export const acessoContainer = styled.div`
     width: 100%;
     display: flex; 
     justify-content: center;
+
+    @media (max-width: 724px) {
+        width: 90%;
+    }
 `
 
 export const logoContainer = styled.div`
@@ -65,7 +73,7 @@ export const logoContainer = styled.div`
     }
 
     @media (max-width: 724px) {
-            width: 50%;
+        display: none;
     }
 `
 
@@ -111,6 +119,7 @@ export const linksContainer = styled.div`
         list-style: none;
         cursor: pointer;
     }
+
 `
 
 export const contatoContainer = styled.div`
@@ -153,12 +162,20 @@ export const contatoContainer = styled.div`
 
     @media (max-width: 724px) { 
         width: 100%;
-        height: 100%;
 
         ul {
             margin: 0px;
         }
+
+        h2 {
+            margin-top: 10px;
+        }
+
+        .location {
+            width: 35px;
+        }
     }
+
 `
 
 export const infoContainer = styled.div`
@@ -170,13 +187,19 @@ export const infoContainer = styled.div`
 
     p {
         display: flex;
-        justify-content: space-around;
         align-items: center;
         color: #fff;
     }
 
     @media (max-width: 724px) {
         width: 90%;    
+        gap: 10px;
+        justify-content: center;
+
+        p {
+            width: 45%;
+            text-align: center;
+        }
     }
         
 `

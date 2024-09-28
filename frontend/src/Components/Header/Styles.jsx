@@ -28,7 +28,7 @@ export const HeaderTitle = styled.div`
 
     @media (max-width: 724px) {
         h2 {
-            font-size: 1rem;
+            font-size: 1.2rem;
         }    
     }
 `
@@ -45,5 +45,9 @@ export const HeaderIcon = styled.div`
         font-size: 25px;
         cursor: pointer;
         color: #fff;
+    }
+
+    @media (max-width: 724px) {
+        width: 50%;
     }
 `

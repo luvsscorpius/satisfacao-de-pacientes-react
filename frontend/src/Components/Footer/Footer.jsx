@@ -44,7 +44,7 @@ export const Footer = () => {
                             <li>ana.silva@exemplo.com</li>
                         </span>
                         <span>
-                            <FaLocationDot/>
+                            <FaLocationDot className='location'/>
                             <li>Rua Gomes de Carvalho, 1356 5º Andar Vila Olímpia São Paulo/SP</li>
                         </span>
                     </ul>
