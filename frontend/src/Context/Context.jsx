@@ -55,6 +55,10 @@ export const ContextProvider = ({children, formComponents}) => {
         e.preventDefault()
         console.log(loginData)
 
+        if (loginData.username === "" && loginData.password === "") {
+            toast.warning('Preencha as informações')
+        }
+
         try {
             const response = await axios.post('http://localhost:2000/login', {loginData}, 
                 { headers: { 'Content-Type': 'application/json' }})
