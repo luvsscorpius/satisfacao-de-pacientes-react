@@ -25,6 +25,12 @@ export const HeaderTitle = styled.div`
     img {
         width: 40px;
     }
+
+    @media (max-width: 724px) {
+        h2 {
+            font-size: 1rem;
+        }    
+    }
 `
 
 export const HeaderIcon = styled.div`

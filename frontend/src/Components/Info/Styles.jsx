@@ -23,4 +23,12 @@ export const Info = styled.div`
         align-items: center;
         color: #ddd;
     }
+
+    @media (max-width: 724px) {
+        width: 90%;
+
+        p {
+            text-align: center;
+        }
+    }
 `

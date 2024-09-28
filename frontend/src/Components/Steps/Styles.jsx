@@ -28,6 +28,19 @@ export const Steps = styled.div`
     .active > svg {
         fill: #457B9D;
     }
+
+    @media (max-width: 724px) {
+        width: 90%;
+        gap: 1rem;
+
+        &:after {
+            content: "";
+            width: 90%;
+            border-bottom: 1px solid #ccc;
+            position: absolute;
+            top: 30px;
+        }
+    }
 `
 
 export const Step = styled.div`
@@ -49,5 +62,9 @@ export const Step = styled.div`
 
     p {
        height: 20px;
+    }
+
+    @media (max-width: 724px) {
+        width: 90%;
     }
 `

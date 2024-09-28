@@ -19,6 +19,10 @@ export const FormContainer = styled.form`
     align-items: center;
     flex-direction: column;
     gap: 30px;
+
+    @media (max-width: 724px) {
+        width: 90%;
+    }
 `
 
 // InputContainer
@@ -33,6 +37,10 @@ export const inputContainer = styled.div`
     justify-content: center;
     flex-direction: column;
     gap: 15px;
+
+    @media (max-width: 724px) {
+        width: 90%;
+    }
 `
 
 export const labelContent = styled.div`
@@ -47,6 +55,10 @@ export const labelContent = styled.div`
         outline: 1px solid #ddd;
         height: 60px;
         margin-bottom: 5px;
+    }
+
+    @media (max-width: 724px) {
+        width: 90%;
     }
 `
 
@@ -66,6 +78,10 @@ export const checkContent = styled.div`
     input[type="checkbox"] {
         width: 15px;    
         cursor: pointer;
+    }
+
+    @media (max-width: 724px) {
+        width: 90%;
     }
 `
 
@@ -88,6 +104,10 @@ export const buttonContent = styled.div`
     p:hover {
         cursor: pointer;
         color: #457B9D;
+    }
+
+    @media (max-width: 724px) {
+        width: 90%;
     }
 `
 

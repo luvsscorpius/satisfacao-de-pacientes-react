@@ -15,6 +15,10 @@ export const lineUp = styled.div`
     height: 8px;
     background-color: #A8DADC;
     margin: 0 auto;
+
+    @media (max-width: 724px) {
+        width: 90%;    
+    }
 `
 
 export const lineDown = styled.div`
@@ -22,6 +26,10 @@ export const lineDown = styled.div`
     height: 5px;
     background-color: #A8DADC;
     margin: 0 auto;
+
+    @media (max-width: 724px) {
+        width: 90%;    
+    }
 `
 
 export const containers = styled.div`
@@ -30,6 +38,11 @@ export const containers = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: 724px) {
+        width: 100%; 
+        height: 100%;
+    }
 `
 
 export const acessoContainer = styled.div`
@@ -49,6 +62,10 @@ export const logoContainer = styled.div`
     img {
         height: 100px;
         width: 100px;
+    }
+
+    @media (max-width: 724px) {
+            width: 50%;
     }
 `
 
@@ -133,6 +150,15 @@ export const contatoContainer = styled.div`
         align-items: center;
         justify-content: center;
     }
+
+    @media (max-width: 724px) { 
+        width: 100%;
+        height: 100%;
+
+        ul {
+            margin: 0px;
+        }
+    }
 `
 
 export const infoContainer = styled.div`
@@ -148,4 +174,9 @@ export const infoContainer = styled.div`
         align-items: center;
         color: #fff;
     }
+
+    @media (max-width: 724px) {
+        width: 90%;    
+    }
+        
 `
