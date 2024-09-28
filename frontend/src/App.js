@@ -27,11 +27,11 @@ function App() {
 
   return (
     <>
-      <GlobalStyle />
-      <Header />
-      <ToastContainer autoClose={3000} className="toast-container" />
       <Router>
         <ContextProvider formComponents={formComponents}>
+          <GlobalStyle />
+          <Header />
+          <ToastContainer autoClose={3000} className="toast-container" />
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/avaliacao' element={<ProtectedRoute stepRequired={0}><Avaliacao /></ProtectedRoute>} />
@@ -39,7 +39,7 @@ function App() {
             <Route path='/avaliacao/envio' element={<ProtectedRoute stepRequired={2}><Envio /></ProtectedRoute>} />
             <Route path='/login' element={<Login />} />
             <Route path='/login/forgotpassword' element={<ForgotPassword />} />
-            <Route path='/adm' element={<ProtectedRouteLogin><Adm/> </ProtectedRouteLogin>}/>
+            <Route path='/adm' element={<ProtectedRouteLogin><Adm /> </ProtectedRouteLogin>} />
           </Routes>
         </ContextProvider>
       </Router>
