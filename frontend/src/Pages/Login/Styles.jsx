@@ -16,4 +16,12 @@ export const Info = styled.div`
         align-items: center;
         color: #fff;
     }
+
+    @media (max-width: 724px) {
+        width: 90%;
+
+        h1 {
+            text-align: center;
+        }
+    }
 `

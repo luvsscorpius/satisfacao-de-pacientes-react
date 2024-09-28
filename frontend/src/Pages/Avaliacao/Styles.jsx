@@ -37,6 +37,10 @@ export const rateContent = styled.div`
     input:checked ~ svg {
         fill: #457B9D;
     }
+
+    @media (max-width: 724px) {
+        width: 90%;
+    }
 `
 
 export const textAreaContent = styled.div`
@@ -57,5 +61,9 @@ export const textAreaContent = styled.div`
         &::placeholder {
             padding: 0px;
         }   
+    }
+
+    @media (max-width: 724px) {
+        width: 90%;
     }
 `

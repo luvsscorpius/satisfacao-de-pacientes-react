@@ -12,6 +12,11 @@ export const divP = styled.div`
         justify-content: center;
         align-items: center;
     }
+
+    @media (max-width: 724px) {
+        width: 90%;
+        gap: 0.5rem;
+    }
 `
 
 export const blocksContent = styled.div`
@@ -57,6 +62,11 @@ export const blocksContent = styled.div`
             color: #fff; 
         }
     }
+
+    @media (max-width: 724px) {
+        width: 90%;
+        gap: 0.5rem;
+    }
 `
 
 export const divP2 = styled.div`
@@ -71,5 +81,9 @@ export const divP2 = styled.div`
         justify-content: center;
         align-items: center;
         width: 100%;
+    }
+    
+    @media (max-width: 724px) {
+        width: 90%;
     }
 `

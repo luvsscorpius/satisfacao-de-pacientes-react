@@ -7,6 +7,14 @@ export const Content = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    @media (max-width: 724px) {
+
+        .login {
+            height: 350px;
+        }
+
+    }   
 `
 
 export const FormContainer = styled.form`

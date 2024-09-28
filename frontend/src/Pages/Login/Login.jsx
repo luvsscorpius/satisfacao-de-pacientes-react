@@ -16,7 +16,7 @@ export const Login = () => {
                 <h1>Dra. Ana Maria, Bem vinda de volta</h1>
             </L.Info>
 
-            <Home.FormContainer>
+            <Home.FormContainer className='login'>
                 <Home.inputContainer>
                     <Home.labelContent>
                         <label htmlFor="user">Nome de usuário:</label>

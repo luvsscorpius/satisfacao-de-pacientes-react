@@ -24,4 +24,8 @@ export const resumoContent = styled.div`
 
         max-height: 100px;
     }
+
+    @media (max-width: 724px) {
+        width: 90%;
+    }
 `

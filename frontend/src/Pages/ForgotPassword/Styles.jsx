@@ -48,4 +48,22 @@ export const Info = styled.div`
         width: 100%;
         padding: 230px;
     }
+
+    @media (max-width: 724px) {
+        width: 90%;
+
+        span {
+            width: 20%;
+            height: 100%;
+            justify-content: flex-start;
+            padding-top: 5px;
+            margin-left: 5px;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 0;
+            font-size: 1.5rem;
+        }
+    }
 `
