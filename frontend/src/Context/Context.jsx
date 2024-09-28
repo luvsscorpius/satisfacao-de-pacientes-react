@@ -1,4 +1,4 @@
-import React, {createContext, useState} from "react";
+import React, {createContext, useEffect, useState} from "react";
 import axios from 'axios'
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
@@ -10,10 +10,15 @@ export const ContextProvider = ({children, formComponents}) => {
     const [isRequired, setIsRequired] = useState(true)
     const [isReadOnly, setIsReadOnly] = useState(false)
     const [data, setData] = useState({isAnonymous: isChecked, name: "", email: "", review: "", comment: "", comeback: ""})
-    const [loginData, setLoginData] = useState({username: "", password: ""})
+    const [loginData, setLoginData] = useState(
+        localStorage.getItem("@:user") ||
+        {username: "", password: ""}
+    ) 
     const [isLembrarMe, setIsLembrarMe] = useState(false)
 
     const [currentStep, setCurrentStep] = useState(0)
+
+    console.log(loginData)
 
     const navigate = useNavigate()
 

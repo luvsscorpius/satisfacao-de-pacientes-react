@@ -1,7 +1,10 @@
 import React from 'react'
+import * as Home from '../Home/Styles'
 
 export const Adm = () => {
   return (
-    <div>Adm</div>
+    <Home.Content>
+      
+    </Home.Content>
   )
 }
