@@ -11,11 +11,13 @@ app.use(cors({exposedHeaders: ['X-Total-Count']}))
 const createFeedBack = require('./Routes/createFeedBack')
 const login = require('./Routes/login')
 const getUsers = require('./Routes/getUsers')
+const getFeedbacks = require('./Routes/getFeedbacks')
 
 // Usando as rotas
 app.use('/createFeedBack', createFeedBack)
 app.use('/login', login)
 app.use('/users', getUsers)
+app.use('/feedbacks', getFeedbacks)
 
 app.listen(port, () => {
     console.log('Servidor rodando na porta', port)

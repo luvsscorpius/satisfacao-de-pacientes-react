@@ -5,6 +5,7 @@ import {dataProvider} from './DataProvider'
 import { UserList } from '../../Components/UserList/UserList'
 import { AppBar } from 'react-admin';
 import { styled } from '@mui/material/styles';
+import { FeedbacksList } from '../../Components/FeedbackList/FeedbackList'
 
 
 // Estilizando o AppBar usando Material-UI
@@ -28,6 +29,7 @@ export const Adm = () => {
   return (
     <Admin layout={CustomLayout} dataProvider={dataProvider} basename="/adm" >
       <Resource name='users' list={UserList} />
+      <Resource name='feedbacks' list={FeedbacksList} />
     </Admin>
   )
 }
