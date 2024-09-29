@@ -4,7 +4,8 @@ const port = 2000
 const cors = require('cors')
 
 app.use(express.json())
-app.use(cors())
+// Precisamos expor o cabecalho para o react admin
+app.use(cors({exposedHeaders: ['X-Total-Count']}))
 
 // Importando as rotas
 const createFeedBack = require('./Routes/createFeedBack')

@@ -39,7 +39,7 @@ function App() {
             <Route path='/avaliacao/envio' element={<ProtectedRoute stepRequired={2}><Envio /></ProtectedRoute>} />
             <Route path='/login' element={<Login />} />
             <Route path='/login/forgotpassword' element={<ForgotPassword />} />
-            <Route path='/adm' element={<ProtectedRouteLogin><Adm /> </ProtectedRouteLogin>} />
+            <Route path='/adm/*' element={<ProtectedRouteLogin><Adm /> </ProtectedRouteLogin>} />
           </Routes>
         </ContextProvider>
       </Router>

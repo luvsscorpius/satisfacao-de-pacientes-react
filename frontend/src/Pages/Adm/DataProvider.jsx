@@ -1,3 +1,7 @@
-import jsonServerProvider from 'ra-data-json-server'
+import jsonServerProvider from 'ra-data-json-server';
 
-export const dataProvider = jsonServerProvider("http://localhost:2000")
+const apiUrl = "http://localhost:2000";
+export const dataProvider = jsonServerProvider(apiUrl);
+
+console.log("Data Provider Initialized with URL:", apiUrl);
+
