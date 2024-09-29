@@ -2,22 +2,24 @@ const express = require('express')
 const router = express.Router()
 const jwt = require('jsonwebtoken')
 const Mongo = require('../config/db')
-
+const bcrypt = require('bcrypt')
 const secretKey = 'minhasenha'
 
 router.post('/', async (req, res) => {
     try {
         //Pegamos oque vem da requisição do frontend
         const {loginData} = req.body
-        console.log(loginData)
 
         const db = await Mongo()
-        const collection = await db.collection('usuarios').find({}).toArray()
+        const collection = await db.collection('usuarios')
 
-        const user = collection.find(user => user.username === loginData.username && user.password === loginData.password)
-        console.log(user)
+        // Procurando usuário pelo nome fornecido
+        const user = await collection.findOne({username: loginData.username})
 
-        if (user) {
+        // Comparando senha fornecida com o hash armazenado no database
+        const isPasswordCorrect = await bcrypt.compare(loginData.password, user.password)
+
+        if (isPasswordCorrect) {
             const token = jwt.sign({name: user.username}, secretKey, {expiresIn: "1hr"})
 
             const userWithToken = {...user, token}
