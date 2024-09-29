@@ -1,10 +1,12 @@
 import React from 'react'
 import * as Home from '../Home/Styles'
+import {Admin, Resource} from 'react-admin'
+import { dataProvider } from './DataProvider'
 
 export const Adm = () => {
   return (
-    <Home.Content>
+    <Admin dataProvider={dataProvider}>
       
-    </Home.Content>
+    </Admin>
   )
 }
