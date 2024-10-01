@@ -90,6 +90,15 @@ export const ContextProvider = ({children, formComponents}) => {
 
     console.log("O passo: ", currentStep)
 
+    // Pegar todos os feedbacks para criar um dashBoard
+    const getAllFeedBacks = async () => {
+        try {
+            const response = axios.get()
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     const contextValue = {
         data, 
         setData, 

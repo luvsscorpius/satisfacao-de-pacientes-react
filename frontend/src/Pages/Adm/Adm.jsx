@@ -6,6 +6,7 @@ import { UserList } from '../../Components/UserList/UserList'
 import { AppBar } from 'react-admin';
 import { styled } from '@mui/material/styles';
 import { FeedbacksList } from '../../Components/FeedbackList/FeedbackList'
+import {Dashboard} from '../../Components/Dashboard/Dashboard'
 
 
 // Estilizando o AppBar usando Material-UI
@@ -27,9 +28,8 @@ const CustomLayout = (props) => (
 
 export const Adm = () => {
   return (
-    <Admin layout={CustomLayout} dataProvider={dataProvider} basename="/adm" >
+    <Admin dashboard={Dashboard} layout={CustomLayout} dataProvider={dataProvider} basename="/adm" >
       <Resource name='users' list={UserList} />
-      <Resource name='feedbacks' list={FeedbacksList} />
     </Admin>
   )
 }
