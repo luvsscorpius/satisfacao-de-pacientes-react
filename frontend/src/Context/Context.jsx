@@ -1,24 +1,23 @@
-import React, {createContext, useEffect, useState} from "react";
+import React, { createContext, useEffect, useState } from "react";
 import axios from 'axios'
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
 export const Context = createContext(null)
 
-export const ContextProvider = ({children, formComponents}) => {
+export const ContextProvider = ({ children, formComponents }) => {
     const [isChecked, setIsChecked] = useState(false)
     const [isRequired, setIsRequired] = useState(true)
     const [isReadOnly, setIsReadOnly] = useState(false)
-    const [data, setData] = useState({isAnonymous: isChecked, name: "", email: "", review: "", comment: "", comeback: ""})
+    const [data, setData] = useState({ isAnonymous: isChecked, name: "", email: "", review: "", comment: "", comeback: "" })
     const [loginData, setLoginData] = useState(
         localStorage.getItem("@:user") ||
-        {username: "", password: ""}
-    ) 
+        { username: "", password: "" }
+    )
     const [isLembrarMe, setIsLembrarMe] = useState(false)
 
     const [currentStep, setCurrentStep] = useState(0)
-
-    console.log(loginData)
+    const [allFeedbacks, setAllFeedbacks] = useState()
 
     const navigate = useNavigate()
 
@@ -40,7 +39,7 @@ export const ContextProvider = ({children, formComponents}) => {
         console.log(data)
 
         try {
-           const response = await axios.put("http://localhost:2000/createFeedBack", data, {
+            const response = await axios.put("http://localhost:2000/createFeedBack", data, {
                 headers: { 'Content-Type': 'application/json' }
             })
 
@@ -48,12 +47,23 @@ export const ContextProvider = ({children, formComponents}) => {
                 toast.success('Feedback enviado com sucesso')
                 navigate('/')
                 setCurrentStep(0)
-                setData({name: "", email: "", review: "", comment: "", comeback: ""})
+                setData({ name: "", email: "", review: "", comment: "", comeback: "" })
             } else {
                 toast.error('Ocorreu algum erro, tente novamente em alguns instantes')
             }
         } catch (error) {
             console.error(error)
+        }
+    }
+
+    // Pegar todos os feedbacks para criar um dashBoard
+    const getAllFeedBacks = async () => {
+        try {
+            const response = await axios.get("http://localhost:2000/feedbacks")
+            setAllFeedbacks(response.data)
+            return response.data
+        } catch (error) {
+            console.log(error)
         }
     }
 
@@ -64,20 +74,21 @@ export const ContextProvider = ({children, formComponents}) => {
 
         if (loginData.username === "" && loginData.password === "") {
             toast.warning('Preencha as informações')
-        } 
+        }
 
         if (isLembrarMe) {
             localStorage.setItem("@:user", JSON.stringify(loginData))
         }
 
         try {
-            const response = await axios.post('http://localhost:2000/login', {loginData}, 
-                { headers: { 'Content-Type': 'application/json' }})
+            const response = await axios.post('http://localhost:2000/login', { loginData },
+                { headers: { 'Content-Type': 'application/json' } })
 
-            if (response.status === 200){
+            if (response.status === 200) {
                 const token = response.data.token
                 axios.defaults.headers.common["Authorization"] = `Bearer ${token}`
                 navigate("/adm")
+                getAllFeedBacks()
             }
         } catch (error) {
             if (error.status === 401) {
@@ -88,27 +99,24 @@ export const ContextProvider = ({children, formComponents}) => {
         }
     }
 
-    console.log("O passo: ", currentStep)
 
-    // Pegar todos os feedbacks para criar um dashBoard
-    const getAllFeedBacks = async () => {
-        try {
-            const response = axios.get()
-        } catch (error) {
-            console.log(error)
-        }
+    if (loginData.username !== "") {
+        const reviewValueAnon = allFeedbacks.isAnonymousFeedbacks[0] || []
+        const reviewValueNon = allFeedbacks.nonAnonymousFeedbacks[0] || []
     }
 
+    // const allFeedbacksFormatted = [...reviewValueAnon, ...reviewValueNon]
+
     const contextValue = {
-        data, 
-        setData, 
-        isChecked, 
-        setIsChecked, 
-        isRequired, 
-        setIsRequired, 
-        currentStep, 
-        setCurrentStep, 
-        changeStep, 
+        data,
+        setData,
+        isChecked,
+        setIsChecked,
+        isRequired,
+        setIsRequired,
+        currentStep,
+        setCurrentStep,
+        changeStep,
         sendInfo,
         isReadOnly,
         setIsReadOnly,
@@ -116,7 +124,10 @@ export const ContextProvider = ({children, formComponents}) => {
         loginData,
         setLoginData,
         isLembrarMe,
-        setIsLembrarMe}
+        setIsLembrarMe,
+        allFeedbacks,
+        setAllFeedbacks
+    }
     return (
         <Context.Provider value={contextValue}>
             {children}

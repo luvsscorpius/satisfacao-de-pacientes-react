@@ -8,7 +8,6 @@ import { styled } from '@mui/material/styles';
 import { FeedbacksList } from '../../Components/FeedbackList/FeedbackList'
 import {Dashboard} from '../../Components/Dashboard/Dashboard'
 
-
 // Estilizando o AppBar usando Material-UI
 const CustomAppBar = styled(AppBar)(({ theme }) => ({
   backgroundColor: '#457B9D',
