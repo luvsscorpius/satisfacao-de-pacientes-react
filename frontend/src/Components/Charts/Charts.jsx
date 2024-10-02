@@ -5,15 +5,16 @@ import { Context } from '../../Context/Context';
 export const Chart = () => {
   const { allFeedbacks } = useContext(Context);
 
-  // Verifique se allFeedbacks é definido e não está vazio
+  // Verificando se tem feedbacks, caso não mostrará uma div que nao há feedbacks
   if (!allFeedbacks || (!allFeedbacks.isAnonymousFeedbacks && !allFeedbacks.nonAnonymousFeedbacks)) {
-    return <div>No feedback data available</div>;
+    return <div>Não há feedbacks disponíveis no momento</div>;
   }
 
+  // Separando os feedbacks anonimos e nao anonimos
   const reviewValueAnon = allFeedbacks.isAnonymousFeedbacks || [];
   const reviewValueNon = allFeedbacks.nonAnonymousFeedbacks || [];
 
-  // Contar as ocorrências de cada review
+  // Objeto para contar as ocorrências de cada review
   const reviewCounts = {};
 
   // Contando feedbacks anônimos
@@ -32,17 +33,17 @@ export const Chart = () => {
     }
   });
 
-  // Transformar o objeto em um array para o gráfico
+  //Transformando o objeto review counts em um array para o gráfico
   const data = Object.keys(reviewCounts).map(key => ({
     name: key,
     value: reviewCounts[key],
   }));
 
   // Cores para o gráfico de pizza
-  const COLORS = ['#0088FE', '#FFBB28', '#FF8042', '#FF8042'];
+  const COLORS = ['#0088FE', '#FFBB28', '#95C268', '#FF8042'];
 
   return (
-    <ResponsiveContainer width="100%" height={800}>
+    <ResponsiveContainer width="100%" height={400}>
       <PieChart>
         <Pie
           data={data}

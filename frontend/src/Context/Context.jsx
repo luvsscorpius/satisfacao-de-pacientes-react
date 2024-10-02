@@ -11,13 +11,14 @@ export const ContextProvider = ({ children, formComponents }) => {
     const [isReadOnly, setIsReadOnly] = useState(false)
     const [data, setData] = useState({ isAnonymous: isChecked, name: "", email: "", review: "", comment: "", comeback: "" })
     const [loginData, setLoginData] = useState(
-        localStorage.getItem("@:user") ||
-        { username: "", password: "" }
-    )
+        JSON.parse(localStorage.getItem("@:user")) || { username: "", password: "" }
+    );
+    
     const [isLembrarMe, setIsLembrarMe] = useState(false)
 
     const [currentStep, setCurrentStep] = useState(0)
     const [allFeedbacks, setAllFeedbacks] = useState()
+    localStorage.clear(); // For localStorage
 
     const navigate = useNavigate()
 
@@ -76,10 +77,6 @@ export const ContextProvider = ({ children, formComponents }) => {
             toast.warning('Preencha as informações')
         }
 
-        if (isLembrarMe) {
-            localStorage.setItem("@:user", JSON.stringify(loginData))
-        }
-
         try {
             const response = await axios.post('http://localhost:2000/login', { loginData },
                 { headers: { 'Content-Type': 'application/json' } })
@@ -87,6 +84,9 @@ export const ContextProvider = ({ children, formComponents }) => {
             if (response.status === 200) {
                 const token = response.data.token
                 axios.defaults.headers.common["Authorization"] = `Bearer ${token}`
+                if (isLembrarMe) {
+                    localStorage.setItem("@:user", JSON.stringify(loginData));
+                }
                 navigate("/adm")
                 getAllFeedBacks()
             }
@@ -96,14 +96,6 @@ export const ContextProvider = ({ children, formComponents }) => {
             } else {
                 toast.error(error)
             }
-        }
-    }
-
-
-    if (loginData.username != "" && loginData.password != "") {
-        if (allFeedbacks != null) {
-            const reviewValueAnon = allFeedbacks.isAnonymousFeedbacks[0] || []
-            const reviewValueNon = allFeedbacks.nonAnonymousFeedbacks[0] || []
         }
     }
 
