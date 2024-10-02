@@ -100,9 +100,11 @@ export const ContextProvider = ({ children, formComponents }) => {
     }
 
 
-    if (loginData.username !== "") {
-        const reviewValueAnon = allFeedbacks.isAnonymousFeedbacks[0] || []
-        const reviewValueNon = allFeedbacks.nonAnonymousFeedbacks[0] || []
+    if (loginData.username != "" && loginData.password != "") {
+        if (allFeedbacks != null) {
+            const reviewValueAnon = allFeedbacks.isAnonymousFeedbacks[0] || []
+            const reviewValueNon = allFeedbacks.nonAnonymousFeedbacks[0] || []
+        }
     }
 
     // const allFeedbacksFormatted = [...reviewValueAnon, ...reviewValueNon]
