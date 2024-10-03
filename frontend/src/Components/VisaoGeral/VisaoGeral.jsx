@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { Context } from '../../Context/Context'
 import { Legend, Pie, PieChart, ResponsiveContainer, Tooltip, Cell } from 'recharts'
+import * as V from './Styles'
 
 export const VisaoGeral = () => {
     const { allFeedbacks } = useContext(Context)
@@ -69,7 +70,7 @@ export const VisaoGeral = () => {
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <div style={{ display: 'flex', flexDirection: 'row', gap: '10px' }}>
+            <V.geralContent >
                 <div style={{ textAlign: 'center', width: '100%', height: '100%' }}>
                     <h3>Quantidade de avaliações</h3>
                     <h2>{totalFeedbacks}</h2>
@@ -98,7 +99,7 @@ export const VisaoGeral = () => {
                         </PieChart>
                     </ResponsiveContainer>
                 </div>
-            </div>
+            </V.geralContent>
 
         </div>
     )
