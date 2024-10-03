@@ -17,7 +17,7 @@ export const ContextProvider = ({ children, formComponents }) => {
     const [isLembrarMe, setIsLembrarMe] = useState(false)
 
     const [currentStep, setCurrentStep] = useState(0)
-    const [allFeedbacks, setAllFeedbacks] = useState()
+    const [allFeedbacks, setAllFeedbacks] = useState({}) 
     localStorage.clear(); // For localStorage
 
     const navigate = useNavigate()

@@ -55,46 +55,50 @@ export const VisaoGeral = () => {
         return totalFeedbacksnonAno
     })
 
-    const porcentageFeedbacksAno = totalFeedbacks / totalFeedbacksAno
-    console.log(porcentageFeedbacksAno)
+    const porcentageFeedbacksAno = parseFloat(((totalFeedbacksAno / totalFeedbacks) * 100).toFixed(2))
+    const porcentageFeedbacksNonAno = parseFloat(((totalFeedbacksnonAno / totalFeedbacks) * 100).toFixed(2))
+    console.log(porcentageFeedbacksAno, porcentageFeedbacksNonAno)
+
+    const data = [
+        { name: 'Anônimos', value: porcentageFeedbacksAno },
+        { name: 'Não Anônimos', value: porcentageFeedbacksNonAno },
+    ]
 
     // Cores para o gráfico de pizza
-    const COLORS = ['#0088FE', '#FFBB28', '#95C268', '#FF8042'];
+    const COLORS = ['#0088FE', '#FFBB28'];
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <div style={{ display: 'flex', flexDirection: 'row' }}>
-                <div style={{ textAlign: 'center', width: '100%' }}>
+            <div style={{ display: 'flex', flexDirection: 'row', gap: '10px' }}>
+                <div style={{ textAlign: 'center', width: '100%', height: '100%' }}>
                     <h3>Quantidade de avaliações</h3>
                     <h2>{totalFeedbacks}</h2>
                 </div>
 
                 <div style={{ textAlign: 'center', width: '100%' }}>
-                    <h3>%</h3>
-                    <h2>{totalFeedbacks}</h2>
+                    <h3>Anônimos vs Não Anônimos</h3>
+                    <ResponsiveContainer width="100%" height={300}>
+                        <PieChart>
+                            <Pie
+                                data={data}
+                                dataKey="value"
+                                nameKey="name"
+                                cx="50%"
+                                cy="50%"
+                                outerRadius={80}
+                                fill="#8884d8"
+                                label
+                            >
+                                {data.map((entry, index) => (
+                                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                                ))}
+                            </Pie>
+                            <Tooltip />
+                            <Legend />
+                        </PieChart>
+                    </ResponsiveContainer>
                 </div>
             </div>
-
-            <ResponsiveContainer width="100%" height={400}>
-                <PieChart>
-                    <Pie
-                        data={data}
-                        dataKey="value"
-                        nameKey="name"
-                        cx="50%"
-                        cy="50%"
-                        outerRadius={80}
-                        fill="#8884d8"
-                        label
-                    >
-                        {data.map((entry, index) => (
-                            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                        ))}
-                    </Pie>
-                    <Tooltip />
-                    <Legend />
-                </PieChart>
-            </ResponsiveContainer>
 
         </div>
     )
