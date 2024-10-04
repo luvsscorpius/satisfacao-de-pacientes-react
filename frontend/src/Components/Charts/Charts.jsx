@@ -101,7 +101,7 @@ export const Chart = () => {
   const maxIndex = data.findIndex(item => item.value === maxValue)
 
   // Cálculo da posição correta da agulha com base no acúmulo de proporções
-  const cumulativeValue = data.slice(0, maxValue + 1).reduce((sum, entry) => sum + entry.value, 0);
+  const cumulativeValue = data.slice(0, maxIndex + 1).reduce((sum, entry) => sum + entry.value, 0);
 
   // Calcula o valor proporcional do maior feedback em relação ao total
   const value = cumulativeValue;
@@ -136,8 +136,8 @@ export const Chart = () => {
 };
 
   return (
-    <ResponsiveContainer width="100%" height={400} >
-      <PieChart style={{ marginTop: '10px' }}>
+    <ResponsiveContainer width="100%" height={300} >
+      <PieChart>
         <Pie
           dataKey="value"
           startAngle={180}
