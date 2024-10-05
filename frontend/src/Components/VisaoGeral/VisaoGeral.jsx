@@ -178,10 +178,10 @@ export const VisaoGeral = () => {
                         <h2>{totalFeedbacks}</h2>
                     </V.geralFirstContent>
 
-                    <V.geralFirstContent style={{ height: "100%" }}>
+                    <V.geralFirstContent>
                         <h3>Média de retorno</h3>
 
-                            <PieChart width={400} height={300}>
+                            <PieChart width={400} height={250}>
                                 <Pie
                                     dataKey="value"
                                     startAngle={180}
@@ -205,7 +205,7 @@ export const VisaoGeral = () => {
                     </V.geralFirstContent>
                 </V.geralFirstContainer>
 
-                <div style={{ textAlign: 'center', width: '100%' }}>
+                <V.geralFirstContent style={{ textAlign: 'center', width: '100%' }}>
                     <h3>Anônimos vs Não Anônimos</h3>
                     <ResponsiveContainer width="100%" height={300}>
                         <PieChart>
@@ -227,7 +227,7 @@ export const VisaoGeral = () => {
                             <Legend />
                         </PieChart>
                     </ResponsiveContainer>
-                </div>
+                </V.geralFirstContent>
             </V.geralContent>
 
         </V.geralContainer>

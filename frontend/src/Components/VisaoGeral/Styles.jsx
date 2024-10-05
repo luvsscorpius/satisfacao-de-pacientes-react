@@ -18,16 +18,21 @@ export const geralContent = styled.div`
 export const geralFirstContainer = styled.div`
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
     width: 100%;
-    gap: 50px;
+    gap: 20px;
 `
 
 export const geralFirstContent = styled.div`
     text-align: center;
     display: flex;
     justify-content: center;
-    align-item: center;
+    align-items: center;
     flex-direction: column;
+
+    border: 1px solid #DDDDDD;
+    border-radius: 9px;
+    width: 100%;
 `
 
