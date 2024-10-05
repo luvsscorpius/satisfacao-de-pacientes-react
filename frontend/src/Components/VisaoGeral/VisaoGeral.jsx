@@ -181,7 +181,7 @@ export const VisaoGeral = () => {
                     <V.geralFirstContent>
                         <h3>Média de retorno</h3>
 
-                        <PieChart width={400} height={250}>
+                        <PieChart width={300} height={250}>
                             <Pie
                                 dataKey="value"
                                 startAngle={180}
