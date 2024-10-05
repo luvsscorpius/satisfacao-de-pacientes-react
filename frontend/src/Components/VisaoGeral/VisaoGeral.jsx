@@ -118,7 +118,7 @@ export const VisaoGeral = () => {
     console.log(dataComeBack)
 
     // Organizando do menor para o maior
-    dataComeBack.sort((a, b) => b.value - a.value)
+    dataComeBack.sort((a, b) => a.value - b.value)
 
     // Cores para o gráfico de pizza
     const COLORSComeBack = ['#228B22', '#FFD700', '#FF8C00', '#DC143C', "#4682B4"];
@@ -132,10 +132,10 @@ export const VisaoGeral = () => {
 
     // Encontrar o índice da categoria com maior valor
     const maxValue = Math.max(...dataComeBack.map(item => item.value))
-    const maxIndex = data.findIndex(item => item.value === maxValue)
+    const maxIndex = dataComeBack.findIndex(item => item.value === maxValue)
 
     // Cálculo da posição correta da agulha com base no acúmulo de proporções
-    const cumulativeValue = data.slice(0, maxIndex + 1).reduce((sum, entry) => sum + entry.value, 0);
+    const cumulativeValue = dataComeBack.slice(0, maxIndex + 1).reduce((sum, entry) => sum + entry.value, 0);
 
     // Calcula o valor proporcional do maior feedback em relação ao total
     const value = cumulativeValue;
@@ -181,27 +181,27 @@ export const VisaoGeral = () => {
                     <V.geralFirstContent>
                         <h3>Média de retorno</h3>
 
-                            <PieChart width={400} height={250}>
-                                <Pie
-                                    dataKey="value"
-                                    startAngle={180}
-                                    endAngle={0}
-                                    data={dataComeBack}
-                                    cx={cx}
-                                    cy={cy}
-                                    innerRadius={iR}
-                                    outerRadius={oR}
-                                    fill="#8884d8"
-                                    stroke="none"
-                                >
-                                    {dataComeBack.map((entry, index) => (
-                                        <Cell key={`cell-${index}`} fill={COLORSComeBack[index % COLORSComeBack.length]} />
-                                    ))}
-                                </Pie>
-                                {needle(value, dataComeBack, cx, cy, iR, oR, '#d0d000')} {/* Chamando a agulha */}
-                                <Tooltip />
-                                <Legend />
-                            </PieChart>
+                        <PieChart width={400} height={250}>
+                            <Pie
+                                dataKey="value"
+                                startAngle={180}
+                                endAngle={0}
+                                data={dataComeBack}
+                                cx={cx}
+                                cy={cy}
+                                innerRadius={iR}
+                                outerRadius={oR}
+                                fill="#8884d8"
+                                stroke="none"
+                            >
+                                {dataComeBack.map((entry, index) => (
+                                    <Cell key={`cell-${index}`} fill={COLORSComeBack[index % COLORSComeBack.length]} />
+                                ))}
+                            </Pie>
+                            {needle(value, dataComeBack, cx, cy, iR, oR, '#d0d000')} {/* Chamando a agulha */}
+                            <Tooltip />
+                            <Legend />
+                        </PieChart>
                     </V.geralFirstContent>
                 </V.geralFirstContainer>
 

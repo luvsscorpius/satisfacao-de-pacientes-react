@@ -5,4 +5,7 @@ export const chartContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    border: 1px solid #DDDDDD;
+    border-radius: 9px;
 `
