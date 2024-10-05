@@ -181,8 +181,7 @@ export const VisaoGeral = () => {
                     <V.geralFirstContent style={{ height: "100%" }}>
                         <h3>Média de retorno</h3>
 
-                        <ResponsiveContainer height={300}>
-                            <PieChart>
+                            <PieChart width={400} height={300}>
                                 <Pie
                                     dataKey="value"
                                     startAngle={180}
@@ -203,7 +202,6 @@ export const VisaoGeral = () => {
                                 <Tooltip />
                                 <Legend />
                             </PieChart>
-                        </ResponsiveContainer>
                     </V.geralFirstContent>
                 </V.geralFirstContainer>
 

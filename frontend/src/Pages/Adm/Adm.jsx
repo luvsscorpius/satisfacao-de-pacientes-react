@@ -16,8 +16,9 @@ const CustomAppBar = styled(AppBar)(({ theme }) => ({
   padding: '0 20px',         
   height: '50px',    
   position: 'absolute',
-  display: 'flex;',
-  justifyContent: 'center'
+  display: 'flex',
+  justifyContent: 'center',
+  width: '100%',
 }));
 
 // Criando um layout customizado com o AppBar

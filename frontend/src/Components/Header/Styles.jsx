@@ -48,6 +48,6 @@ export const HeaderIcon = styled.div`
     }
 
     @media (max-width: 724px) {
-        width: 50%;
+        width: 40%;
     }
 `

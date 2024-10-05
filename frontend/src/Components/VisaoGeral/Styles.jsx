@@ -20,7 +20,7 @@ export const geralFirstContainer = styled.div`
     justify-content: center;
     flex-direction: column;
     width: 100%;
-    gap: 10px;
+    gap: 50px;
 `
 
 export const geralFirstContent = styled.div`

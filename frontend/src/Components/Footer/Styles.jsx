@@ -10,7 +10,7 @@ export const Footer = styled.footer`
     flex-direction: column;
 
     @media (max-width: 724px) {
-        height: 300px;
+        height: 3   00px;
     }
 `
 
@@ -195,6 +195,7 @@ export const infoContainer = styled.div`
         width: 90%;    
         gap: 10px;
         justify-content: center;
+        height: 100px;
 
         p {
             width: 45%;
