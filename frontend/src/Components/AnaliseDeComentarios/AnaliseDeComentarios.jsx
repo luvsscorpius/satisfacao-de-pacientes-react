@@ -1,7 +1,8 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import * as A from './Styles'
 import { Context } from '../../Context/Context'
 import { FaUser } from "react-icons/fa";
+import ReactPaginate from 'react-paginate'
 
 export const AnaliseDeComentarios = () => {
     const { allFeedbacks } = useContext(Context)
@@ -14,6 +15,19 @@ export const AnaliseDeComentarios = () => {
     const allFeedbacksForm = [...feedbacksAnonimos, ...feedbacksNaoAnonimos]
 
     console.log(allFeedbacksForm)
+
+    // Paginação
+    const [currentPage, setCurrentPage] = useState(0)
+    const itemsPerPage = 5
+
+    // Função para quando o usuário selecionar algum item da páginação
+    const handleClickPage = ({ selected }) => {
+        setCurrentPage(selected)
+    }
+
+    // off set é um indice que aponta para o primeiro elemento que deve ser exibido na página
+    const offset = currentPage * itemsPerPage
+    const currentPageData = allFeedbacksForm.slice(offset, offset + itemsPerPage)
 
     return (
         <A.mainContainer>
@@ -33,7 +47,7 @@ export const AnaliseDeComentarios = () => {
             </A.navContainer>
 
             <A.commentsContainer>
-                {allFeedbacksForm.map(feedback => (
+                {currentPageData.map(feedback => (
                     <A.commentsContent>
                         <span>
                             <FaUser size={50} />
@@ -76,7 +90,19 @@ export const AnaliseDeComentarios = () => {
                         </div>
                     </A.commentsContent>
                 ))}
+
+                <ReactPaginate
+                    pageCount={Math.ceil(allFeedbacksForm.length / itemsPerPage)}
+                    pageRangeDisplayed={5} // Número de páginas a serem exibidas
+                    marginPagesDisplayed={2} // Número de páginas a serem exibidas nas extremidades
+                    onPageChange={handleClickPage}
+                    containerClassName={'pagination'}
+                    activeClassName={'active'}
+                    nextLinkClassName={"next"}
+                    previousLinkClassName={"previous"}
+                    pageClassName={"page"}
+                    className='pagination' />
             </A.commentsContainer>
-        </A.mainContainer>
+        </A.mainContainer >
     )
 }

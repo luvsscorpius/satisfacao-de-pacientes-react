@@ -85,6 +85,86 @@ export const commentsContainer = styled.div`
     width: 100%;
     height: 100%;
     margin-top: 10px;
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        list-style: none;
+        margin-top: 10px;
+        width: 100%;
+        height: 40px;
+        line-height: 28px;
+        padding: 0 1rem;
+        border: 2px solid transparent;
+        border-radius: 8px;
+        outline: none;
+        background-color: #f3f3f4;
+        color: #0d0c22;
+        transition: .3s ease;
+
+        li.page {
+            width: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+
+            &:hover {
+                outline: none;
+                background-color: #457B9D;
+                border-color: #457B9D;
+                box-shadow: 0 2px 8px rgba(69, 123, 157, 0.5);
+                cursor: pointer;
+                color: #fff;
+            }
+        }
+
+        li.active {
+                outline: none;
+                background-color: #457B9D;
+                border-color: #457B9D;
+                box-shadow: 0 2px 8px rgba(69, 123, 157, 0.5);
+                color: #fff;
+        }
+
+        li.next {
+            width: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+
+            &:hover {
+                outline: none;
+                background-color: #457B9D;
+                border-color: #457B9D;
+                box-shadow: 0 2px 8px rgba(69, 123, 157, 0.5);
+                cursor: pointer;
+                color: #fff;
+            }
+        }
+
+        li.previous {
+            width: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+
+            &:hover {
+                outline: none;
+                background-color: #457B9D;
+                border-color: #457B9D;
+                box-shadow: 0 2px 8px rgba(69, 123, 157, 0.5);
+                cursor: pointer;
+                color: #fff;
+            }
+        }
+
+
+    }
 `
 
 export const commentsContent = styled.div`
