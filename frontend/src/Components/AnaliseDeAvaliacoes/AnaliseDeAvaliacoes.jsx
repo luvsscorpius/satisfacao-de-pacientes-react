@@ -16,6 +16,22 @@ export const AnaliseDeAvaliacoes = () => {
 
     console.log(allFeedbacksForm)
 
+    // Filtro 
+    const [filter, setFilter] = useState('all')
+
+    const handleFilterClick = (filterType) => {
+        const selectedFilter = filterType.target.value
+        setFilter(selectedFilter)
+    }
+
+    console.log(filter)
+
+    const filteredComments = allFeedbacksForm.filter((comment) => {
+        if (filter === 'anonymous') return comment.isAnonymous
+        if (filter === 'nonAnonymous') return !comment.isAnonymous
+        return true
+    })
+
     // Paginação
     const [currentPage, setCurrentPage] = useState(0)
     const itemsPerPage = 5
@@ -27,7 +43,7 @@ export const AnaliseDeAvaliacoes = () => {
 
     // off set é um indice que aponta para o primeiro elemento que deve ser exibido na página
     const offset = currentPage * itemsPerPage
-    const currentPageData = allFeedbacksForm.slice(offset, offset + itemsPerPage)
+    const currentPageData = filteredComments.slice(offset, offset + itemsPerPage)
 
     return (
         <A.mainContainer>
@@ -38,10 +54,10 @@ export const AnaliseDeAvaliacoes = () => {
                 </span>
 
                 <span className='filters'>
-                    <select name="" id="">
-                        <option value="">Todos</option>
-                        <option value="">Anônimos</option>
-                        <option value="">Não Anônimos</option>
+                    <select value={filter} onChange={handleFilterClick}>
+                        <option value="all">Todos</option>
+                        <option value="anonymous">Anônimos</option>
+                        <option value="nonAnonymous">Não Anônimos</option>
                     </select>
                 </span>
             </A.navContainer>
@@ -92,7 +108,7 @@ export const AnaliseDeAvaliacoes = () => {
                 ))}
 
                 <ReactPaginate
-                    pageCount={Math.ceil(allFeedbacksForm.length / itemsPerPage)}
+                    pageCount={Math.ceil(filteredComments.length / itemsPerPage)}
                     pageRangeDisplayed={5} // Número de páginas a serem exibidas
                     marginPagesDisplayed={2} // Número de páginas a serem exibidas nas extremidades
                     onPageChange={handleClickPage}
