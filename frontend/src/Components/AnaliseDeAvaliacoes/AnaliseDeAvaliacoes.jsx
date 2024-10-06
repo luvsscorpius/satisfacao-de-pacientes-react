@@ -4,7 +4,7 @@ import { Context } from '../../Context/Context'
 import { FaUser } from "react-icons/fa";
 import ReactPaginate from 'react-paginate'
 
-export const AnaliseDeComentarios = () => {
+export const AnaliseDeAvaliacoes = () => {
     const { allFeedbacks } = useContext(Context)
 
     console.log(allFeedbacks)

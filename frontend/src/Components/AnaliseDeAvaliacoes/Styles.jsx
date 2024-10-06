@@ -163,7 +163,6 @@ export const commentsContainer = styled.div`
             }
         }
 
-
     }
 `
 
@@ -186,5 +185,13 @@ export const commentsContent = styled.div`
         flex-direction: row;
         width: 100%;
         gap: 20px;
+    }
+
+    @media (max-width: 724px) {
+
+        .info {
+            flex-direction: column;
+            gap: 10px;
+        }
     }
 `
