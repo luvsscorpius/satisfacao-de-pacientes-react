@@ -80,3 +80,31 @@ export const navContainer = styled.nav`
     }
 
 `
+
+export const commentsContainer = styled.div`
+    width: 100%;
+    height: 100%;
+    margin-top: 10px;
+`
+
+export const commentsContent = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px;
+    margin-top: 10px;
+    border: 1px solid #dddd;
+    gap: 10px;
+    
+    span {
+        display: flex;
+        gap: 10px;
+    }
+
+    .info {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        gap: 20px;
+    }
+`
