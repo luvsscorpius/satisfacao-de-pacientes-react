@@ -31,6 +31,10 @@ export const FormContainer = styled.form`
     @media (max-width: 724px) {
         width: 90%;
     }
+
+    @media (max-width: 1024px) {
+        width: 90%;
+    }
 `
 
 // InputContainer
@@ -47,6 +51,10 @@ export const inputContainer = styled.div`
     gap: 15px;
 
     @media (max-width: 724px) {
+        width: 90%;
+    }
+
+    @media (max-width: 1024px) {
         width: 90%;
     }
 `
@@ -115,6 +123,10 @@ export const buttonContent = styled.div`
     }
 
     @media (max-width: 724px) {
+        width: 90%;
+    }
+
+    @media (max-width: 1024px) {
         width: 90%;
     }
 `

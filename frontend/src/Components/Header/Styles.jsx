@@ -28,7 +28,7 @@ export const HeaderTitle = styled.div`
 
     @media (max-width: 724px) {
         h2 {
-            font-size: 1.2rem;
+            font-size: 1rem;
         }    
     }
 `

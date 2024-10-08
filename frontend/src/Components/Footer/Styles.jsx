@@ -10,7 +10,11 @@ export const Footer = styled.footer`
     flex-direction: column;
 
     @media (max-width: 724px) {
-        height: 3   00px;
+        height: 300px;
+    }
+
+    @media (max-width: 1024px) {
+        width: 100vw;
     }
 `
 
@@ -23,6 +27,10 @@ export const lineUp = styled.div`
     @media (max-width: 724px) {
         width: 204px;    
     }
+
+    @media (max-width: 1024px) {
+        width: 200px;
+    }
 `
 
 export const lineDown = styled.div`
@@ -33,6 +41,10 @@ export const lineDown = styled.div`
 
     @media (max-width: 724px) {
         width: 204px;    
+    }
+
+    @media (max-width: 1024px) {
+        width: 200px;
     }
 `
 
@@ -46,6 +58,10 @@ export const containers = styled.div`
     @media (max-width: 724px) {
         width: 100%; 
         height: 100%;
+    }
+
+    @media (max-width: 1024px) {
+        width: 100%;
     }
 `
 
@@ -203,4 +219,15 @@ export const infoContainer = styled.div`
         }
     }
         
+    @media (max-width: 1024px) {
+        width: 90%;    
+        gap: 10px;
+        justify-content: center;
+        height: 100px;
+
+        p {
+            width: 45%;
+            text-align: center;
+        }
+    }
 `

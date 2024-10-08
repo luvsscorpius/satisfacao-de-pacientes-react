@@ -41,6 +41,10 @@ export const rateContent = styled.div`
     @media (max-width: 724px) {
         width: 90%;
     }
+
+    @media (max-width: 1024px) {
+        width: 90%;
+    }
 `
 
 export const textAreaContent = styled.div`
@@ -64,6 +68,10 @@ export const textAreaContent = styled.div`
     }
 
     @media (max-width: 724px) {
+        width: 90%;
+    }
+
+    @media (max-width: 1024px) {
         width: 90%;
     }
 `

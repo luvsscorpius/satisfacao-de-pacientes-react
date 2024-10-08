@@ -31,4 +31,12 @@ export const Info = styled.div`
             text-align: center;
         }
     }
+
+    @media (max-width: 1024px) {
+        width: 90%;
+
+        p {
+            text-align: center;
+        }
+    }
 `

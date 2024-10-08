@@ -17,6 +17,11 @@ export const divP = styled.div`
         width: 90%;
         gap: 0.5rem;
     }
+
+    @media (max-width: 1024px) {
+        width: 90%;
+        gap: 0.5rem;
+    }
 `
 
 export const blocksContent = styled.div`
@@ -67,6 +72,11 @@ export const blocksContent = styled.div`
         width: 90%;
         gap: 0.5rem;
     }
+
+    @media (max-width: 1024px) {
+        width: 90%;
+        gap: 0.5rem;
+    }
 `
 
 export const divP2 = styled.div`
@@ -84,6 +94,10 @@ export const divP2 = styled.div`
     }
     
     @media (max-width: 724px) {
+        width: 90%;
+    }
+
+    @media (max-width: 1024px) {
         width: 90%;
     }
 `
