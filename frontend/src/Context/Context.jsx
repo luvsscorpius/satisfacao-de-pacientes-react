@@ -11,7 +11,7 @@ export const ContextProvider = ({ children, formComponents }) => {
     const [isReadOnly, setIsReadOnly] = useState(false)
     const [data, setData] = useState({ isAnonymous: isChecked, name: "", email: "", review: "", comment: "", comeback: "" })
     const [loginData, setLoginData] = useState(
-        JSON.parse(localStorage.getItem("@:user")) || { username: "", password: "" }
+        JSON.parse(localStorage.getItem("@:user")) || JSON.parse(sessionStorage.getItem("@:user")) || { username: "", password: "" }
     );
     
     const [isLembrarMe, setIsLembrarMe] = useState(false)
@@ -86,6 +86,7 @@ export const ContextProvider = ({ children, formComponents }) => {
                 axios.defaults.headers.common["Authorization"] = `Bearer ${token}`
                 if (isLembrarMe) {
                     localStorage.setItem("@:user", JSON.stringify(loginData));
+                    sessionStorage.setItem("@:user", JSON.stringify(loginData));
                 }
                 navigate("/adm")
                 getAllFeedBacks()
