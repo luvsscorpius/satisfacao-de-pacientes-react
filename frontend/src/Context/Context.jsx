@@ -121,7 +121,8 @@ export const ContextProvider = ({ children, formComponents }) => {
         isLembrarMe,
         setIsLembrarMe,
         allFeedbacks,
-        setAllFeedbacks
+        setAllFeedbacks,
+        getAllFeedBacks
     }
     return (
         <Context.Provider value={contextValue}>
