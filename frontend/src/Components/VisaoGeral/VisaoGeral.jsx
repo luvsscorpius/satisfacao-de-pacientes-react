@@ -31,9 +31,6 @@ export const VisaoGeral = () => {
         return totalFeedbacks
     })
 
-    console.log(totalFeedbacks)
-
-
     // Calculando a porcentagem de feedbacks anonimos e nao anonimos
     let totalFeedbacksAno = 0
     let totalFeedbacksnonAno = 0
@@ -58,7 +55,6 @@ export const VisaoGeral = () => {
 
     const porcentageFeedbacksAno = parseFloat(((totalFeedbacksAno / totalFeedbacks) * 100).toFixed(2))
     const porcentageFeedbacksNonAno = parseFloat(((totalFeedbacksnonAno / totalFeedbacks) * 100).toFixed(2))
-    console.log(porcentageFeedbacksAno, porcentageFeedbacksNonAno)
 
     const data = [
         { name: 'Anônimos', value: porcentageFeedbacksAno },
@@ -91,7 +87,6 @@ export const VisaoGeral = () => {
     })
 
     nonAnoFeedbacks.forEach(feedback => {
-        console.log(feedback.comeback === "1")
 
         if (feedback.comeback === "1") {
             oneComeBack += 1
@@ -114,8 +109,6 @@ export const VisaoGeral = () => {
         { name: '4', value: fourComeBack },
         { name: '5', value: fiveComeBack }
     ]
-
-    console.log(dataComeBack)
 
     // Organizando do menor para o maior
     dataComeBack.sort((a, b) => a.value - b.value)
@@ -146,9 +139,6 @@ export const VisaoGeral = () => {
             total += v.value;
         });
 
-        console.log(value)
-
-        console.log("total", total)
         const ang = 180.0 * (1 - value / total);
         const length = (iR + 2 * oR) / 3;
         const sin = Math.sin(-RADIAN * ang);

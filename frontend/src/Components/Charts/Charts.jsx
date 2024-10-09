@@ -113,8 +113,6 @@ export const Chart = () => {
       total += v.value;
     });
 
-    console.log(value)
-
     console.log("total", total)
     const ang = 180.0 * (1 - value / total);
     const length = (iR + 2 * oR) / 3;

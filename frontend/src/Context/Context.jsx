@@ -36,8 +36,6 @@ export const ContextProvider = ({ children, formComponents }) => {
     // Logica para enviar as informações para o backend
     const sendInfo = async (e) => {
         e.preventDefault()
-        console.log('Enviei')
-        console.log(data)
 
         try {
             const response = await axios.put("http://localhost:2000/createFeedBack", data, {
@@ -71,7 +69,6 @@ export const ContextProvider = ({ children, formComponents }) => {
     // Funcao para login na pagina de adm da psicologa
     const handleLogin = async (e) => {
         e.preventDefault()
-        console.log(loginData)
 
         if (loginData.username === "" && loginData.password === "") {
             toast.warning('Preencha as informações')
