@@ -7,9 +7,6 @@ export const ProtectedRoute = ({children, stepRequired}) => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        console.log("stepRequired:", stepRequired)
-        console.log("currentStep:", currentStep)
-
         if (currentStep <= stepRequired) {
            
             // Mapear o currentStep para uma rota existente
@@ -22,7 +19,6 @@ export const ProtectedRoute = ({children, stepRequired}) => {
 
             // Se currentStep for 1, ele retornara '/avaliacao'
             // Se currentStep for 2, ele retornara '/avaliacao/avalie' e assim por diante
-            console.log(stepRoutes[currentStep])
             navigate(stepRoutes[currentStep])
         } 
     }, [currentStep, stepRequired, navigate])

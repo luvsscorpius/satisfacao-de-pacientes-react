@@ -1,12 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import * as Home from '../Home/Styles'
 import * as F from './Styles'
 import { FaArrowLeft } from "react-icons/fa";
-import { useNavigate } from 'react-router-dom';
+import { Context } from '../../Context/Context';
 
 export const ForgotPassword = () => {
-
-    const navigate = useNavigate()
+    const {navigate} = useContext(Context)
 
   return (
     <Home.Content>

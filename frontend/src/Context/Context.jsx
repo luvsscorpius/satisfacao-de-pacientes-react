@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useState } from "react";
 import axios from 'axios'
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
@@ -18,14 +18,11 @@ export const ContextProvider = ({ children, formComponents }) => {
 
     const [currentStep, setCurrentStep] = useState(0)
     const [allFeedbacks, setAllFeedbacks] = useState({}) 
-    localStorage.clear(); // For localStorage
 
     const navigate = useNavigate()
 
     // Lógica no botao para avançar e mudar o currentStep
     const changeStep = (i, e) => {
-        console.log(formComponents)
-
         // Se i for menor que 0 ou maior ou igual ao tamanho do array
         if (i < 0 || i >= formComponents.length) return // se for fora dos limites nao faz nada
 
@@ -89,10 +86,10 @@ export const ContextProvider = ({ children, formComponents }) => {
                 getAllFeedBacks()
             }
         } catch (error) {
-            if (error.status === 401) {
+            if (error.response?.status === 401) {
                 toast.error('Invalid credentials')
             } else {
-                toast.error(error)
+                toast.error('An error has occurred')
             }
         }
     }
@@ -119,7 +116,8 @@ export const ContextProvider = ({ children, formComponents }) => {
         setIsLembrarMe,
         allFeedbacks,
         setAllFeedbacks,
-        getAllFeedBacks
+        getAllFeedBacks,
+        navigate
     }
     return (
         <Context.Provider value={contextValue}>

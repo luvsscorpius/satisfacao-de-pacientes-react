@@ -13,11 +13,11 @@ export const Footer = () => {
             <F.containers>
                 <F.acessoContainer>
                     <F.logoContainer>
-                        <img src={iconHeader} alt="" />
+                        <img src={iconHeader} alt="Icone psicologia" />
 
                         <F.iconsContainer>
-                            <img src={igIcon} alt="" />
-                            <img src={linkIcon} alt="" />
+                            <img src={igIcon} alt="Icone instagram" />
+                            <img src={linkIcon} alt="Icone linkedin" />
                         </F.iconsContainer>
                     </F.logoContainer>
 

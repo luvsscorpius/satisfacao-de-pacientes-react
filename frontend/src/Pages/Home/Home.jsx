@@ -1,17 +1,11 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import * as H from './Styles'
-import { useNavigate } from 'react-router-dom';
 import { Info } from '../../Components/Info/Info';
 import { Steps } from '../../Components/Steps/Steps';
 import { Context } from '../../Context/Context';
 
 export const Home = () => {
-    const { data, setData, isChecked, setIsChecked, isRequired, setIsRequired, currentStep, changeStep, isReadOnly, setIsReadOnly } = useContext(Context)
-
-    console.log(data)
-    console.log(isReadOnly)
-
-    const navigate = useNavigate()
+    const { data, setData, isChecked, setIsChecked, isRequired, setIsRequired, currentStep, changeStep, isReadOnly, setIsReadOnly, navigate } = useContext(Context)
 
     // Usando essa função para ver se o checkbox esta checado, se sim deixamos a pessoa passar para a próxima etapa do formulário
     const checkIsChecked = (e) => {

@@ -1,14 +1,10 @@
 import React, { useContext } from 'react'
 import * as Home from '../Home/Styles'
 import * as L from './Styles'
-import { useNavigate } from 'react-router-dom'
 import { Context } from '../../Context/Context'
 
 export const Login = () => {
-    const {handleLogin, loginData, setLoginData, isLembrarMe, setIsLembrarMe} = useContext(Context)
-    const navigate = useNavigate()
-
-    console.log(isLembrarMe)
+    const {handleLogin, loginData, setLoginData, isLembrarMe, setIsLembrarMe, navigate} = useContext(Context)
 
     return (
         <Home.Content>

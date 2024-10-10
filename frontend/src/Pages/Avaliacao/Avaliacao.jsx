@@ -3,17 +3,12 @@ import * as Home from '../Home/Styles'
 import { Info } from '../../Components/Info/Info'
 import { Steps } from '../../Components/Steps/Steps'
 import * as A from './Styles'
-import { useNavigate } from 'react-router-dom'
 import { BsFillEmojiHeartEyesFill, BsFillEmojiSmileFill, BsFillEmojiNeutralFill, BsFillEmojiFrownFill } from 'react-icons/bs'
 import { Context } from '../../Context/Context'
 
 const Avaliacao = () => {
 
-  const { currentStep, changeStep, data, setData } = useContext(Context)
-
-  console.log(data)
-
-  const navigate = useNavigate()
+  const { currentStep, changeStep, data, setData, navigate } = useContext(Context)
 
   const previousPage = (e) => {
     e.preventDefault()

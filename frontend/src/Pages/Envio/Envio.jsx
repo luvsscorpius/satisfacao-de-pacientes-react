@@ -4,13 +4,10 @@ import { Info } from '../../Components/Info/Info'
 import { Steps } from '../../Components/Steps/Steps'
 import { Context } from '../../Context/Context'
 import * as E from './Styles'
-import { useNavigate } from 'react-router-dom'
 import { BsFillEmojiFrownFill, BsFillEmojiHeartEyesFill, BsFillEmojiNeutralFill, BsFillEmojiSmileFill } from 'react-icons/bs'
 
 export const Envio = () => {
-    const { currentStep, changeStep, data, sendInfo } = useContext(Context)
-
-    const navigate = useNavigate()
+    const { currentStep, changeStep, data, sendInfo, navigate } = useContext(Context)
 
     const previousPage = (e) => {
         e.preventDefault()
@@ -24,7 +21,7 @@ export const Envio = () => {
         neutral: <BsFillEmojiNeutralFill/>,
         satisfied: <BsFillEmojiSmileFill/>,
         verySatisfied: <BsFillEmojiHeartEyesFill/>
-      }
+    }
 
   return (
     <Home.Content>

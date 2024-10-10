@@ -4,18 +4,14 @@ import { Info } from '../../Components/Info/Info'
 import { Steps } from '../../Components/Steps/Steps'
 import { Context } from '../../Context/Context'
 import * as A from './Styles'
-import { useNavigate } from 'react-router-dom'
 
 export const Avalie = () => {
-    const { currentStep, changeStep, data, setData } = useContext(Context)
-    const navigate = useNavigate()
+    const { currentStep, changeStep, data, setData, navigate } = useContext(Context)
 
     const previousPage = (e) => {
         e.preventDefault()
         navigate('/avaliacao')
     }
-
-    console.log(data)
 
     // Função para ir para a próxima página
     const nextPage = (e) => {

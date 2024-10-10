@@ -1,11 +1,9 @@
 import React, { useContext, useEffect, useRef } from 'react'
-import * as Home from '../Home/Styles'
 import { Admin, Layout, Resource } from 'react-admin'
 import { dataProvider } from './DataProvider'
 import { UserList } from '../../Components/UserList/UserList'
 import { AppBar } from 'react-admin';
 import { styled } from '@mui/material/styles';
-import { FeedbacksList } from '../../Components/FeedbackList/FeedbackList'
 import { Dashboard } from '../../Components/Dashboard/Dashboard'
 import { Context } from '../../Context/Context'
 

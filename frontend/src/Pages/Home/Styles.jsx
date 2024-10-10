@@ -9,11 +9,9 @@ export const Content = styled.div`
     flex-direction: column;
 
     @media (max-width: 724px) {
-
         .login {
             height: 350px;
         }
-
     }   
 `
 
