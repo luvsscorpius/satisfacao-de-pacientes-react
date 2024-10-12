@@ -4,6 +4,8 @@ const Mongo = require('../config/db')
 const jwt = require('jsonwebtoken')
 const nodemailer = require('nodemailer')
 
+const senha = 'minhasenha'
+
 router.post('/', async (req, res) => {
     const {email} = req.body
     console.log(email)
@@ -17,7 +19,8 @@ router.post('/', async (req, res) => {
             return res.status(400).send({message: 'Usuario não encontrado'})
         }
 
-
+        // gerando um token de recuperacao de senha
+        const token = jwt.sign({id: foundUser._id}, senha, {expiresIn: '1hr'})
     } catch (error) {
         console.error(error)
     }
