@@ -226,7 +226,6 @@ export const infoContainer = styled.div`
         height: 100px;
 
         p {
-            width: 45%;
             text-align: center;
         }
     }
