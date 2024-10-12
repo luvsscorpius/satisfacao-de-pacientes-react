@@ -3,6 +3,7 @@ import * as Home from '../Home/Styles'
 import * as R from '../ResetPassword/Styles'
 import { FaArrowLeft } from "react-icons/fa";
 import { Context } from '../../Context/Context';
+import { useParams } from 'react-router-dom';
 
 export const ResetPassword = () => {
     const {navigate} = useContext(Context)

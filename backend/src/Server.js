@@ -14,6 +14,7 @@ const login = require('./Routes/login')
 const getUsers = require('./Routes/getUsers')
 const getFeedbacks = require('./Routes/getFeedbacks')
 const resetPassword = require('./Routes/resetPassword')
+const checkTokenResetPassword = require('./Routes/checkTokenResetPassword')
 
 // Usando as rotas
 app.use('/createFeedBack', createFeedBack)
@@ -21,6 +22,7 @@ app.use('/login', login)
 app.use('/users', getUsers)
 app.use('/feedbacks', getFeedbacks)
 app.use('/request-password-reset', resetPassword)
+app.use('/reset-password', checkTokenResetPassword)
 
 app.listen(port, () => {
     console.log('Servidor rodando na porta', port)
