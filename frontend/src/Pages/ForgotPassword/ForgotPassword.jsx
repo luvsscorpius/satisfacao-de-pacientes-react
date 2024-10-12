@@ -18,6 +18,7 @@ export const ForgotPassword = () => {
         try {   
             const response = await axios.post('http://localhost:2000/request-password-reset', {email})
             console.log(response)
+            navigate('/login/resetpassword')
         } catch (error) {
             if (error.status === 400) {
                 toast.error('Usuário não encontrado')
