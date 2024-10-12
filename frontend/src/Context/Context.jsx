@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import axios from 'axios'
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
@@ -98,6 +98,25 @@ export const ContextProvider = ({ children, formComponents }) => {
         }
     }
 
+    // Function to logout user from admin page
+    const logOutUser = () => {
+        // limpando das memorias
+        sessionStorage.removeItem("@:user")
+        sessionStorage.removeItem("@:token")
+        localStorage.removeItem("@:user")
+        localStorage.removeItem("@:token")
+
+        // tirando da header
+        axios.defaults.headers.common["Authorization"] = '';
+
+        // limpando dos estados
+        setLoginData({username: '', password: ""})
+
+        //Redirecionando
+        navigate('/')
+        toast.info("Você foi desconectado por motivos de segurança")
+    }
+
     // Function to check if the token is still available
     const checkTokenExpiracy = () => {
         const token = localStorage.getItem("@:token")
@@ -106,11 +125,22 @@ export const ContextProvider = ({ children, formComponents }) => {
           const decoded = jwtDecode(token)
           const currentTime = Date.now() / 1000
 
-          if (decoded.time < currentTime) {
+          if (decoded.exp < currentTime) {
             console.log("Token expirado, deslogando...")
+            logOutUser()
           }
         }
     }
+
+    // Now using useEffect to check if tokenexpiracy
+    useEffect(() => {
+        checkTokenExpiracy()
+
+        // Verificando a expiração
+        const intervalCheck = setInterval(checkTokenExpiracy, 60000)
+
+        return () => clearInterval(intervalCheck)
+    })
 
     const contextValue = {
         data,
