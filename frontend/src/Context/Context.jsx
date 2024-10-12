@@ -2,6 +2,7 @@ import React, { createContext, useState } from "react";
 import axios from 'axios'
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import {jwtDecode} from "jwt-decode"
 
 export const Context = createContext(null)
 
@@ -78,9 +79,12 @@ export const ContextProvider = ({ children, formComponents }) => {
             if (response.status === 200) {
                 const token = response.data.token
                 axios.defaults.headers.common["Authorization"] = `Bearer ${token}`
+                localStorage.setItem("@:token", token)
                 if (isLembrarMe) {
                     localStorage.setItem("@:user", JSON.stringify(loginData));
                     sessionStorage.setItem("@:user", JSON.stringify(loginData));
+                    localStorage.setItem("@:token", token)
+                    sessionStorage.setItem("@:token", token)
                 }
                 navigate("/adm")
                 getAllFeedBacks()
@@ -94,7 +98,19 @@ export const ContextProvider = ({ children, formComponents }) => {
         }
     }
 
-    // const allFeedbacksFormatted = [...reviewValueAnon, ...reviewValueNon]
+    // Function to check if the token is still available
+    const checkTokenExpiracy = () => {
+        const token = localStorage.getItem("@:token")
+
+        if (token) {
+          const decoded = jwtDecode(token)
+          const currentTime = Date.now() / 1000
+
+          if (decoded.time < currentTime) {
+            console.log("Token expirado, deslogando...")
+          }
+        }
+    }
 
     const contextValue = {
         data,
