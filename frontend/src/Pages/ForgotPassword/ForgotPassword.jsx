@@ -17,7 +17,6 @@ export const ForgotPassword = () => {
         e.preventDefault()
         try {   
             const response = await axios.post('http://localhost:2000/request-password-reset', {email})
-            console.log(response)
             toast.success('E-mail enviado com sucesso')
         } catch (error) {
             if (error.status === 400) {

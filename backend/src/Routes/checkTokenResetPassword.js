@@ -9,6 +9,7 @@ router.post('/:token', async (req, res) => {
     const {token} = req.params
     const {newPassword} = req.body
 
+    console.log(token, newPassword)
     try {
         const db = await Mongo()
         const collection = await db.collection('usuarios').find({}).toArray()
