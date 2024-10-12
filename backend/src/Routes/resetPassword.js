@@ -36,12 +36,12 @@ router.post('/', async (req, res) => {
             from: process.env.EMAIL_USER,
             to: foundUser.email,
             subject: 'Redefinição de senha',
-            text: `Clique no link para redefinir sua senha: http://localhost:3000/reset-password/${token}`,
+            text: `Clique no link para redefinir sua senha: http://localhost:3000/#/login/resetpassword?token=${token}`,
         }
 
         try {
             await transporter.sendMail(mailOptions)
-            res.status(200).json({message: 'Email de recuperação enviado'})
+            res.status(200).json(token)
         } catch (error) {
             console.error('Erro ao enviar e-mail:', error) // Adicione esta linha
             res.status(500).json({message: 'Erro ao enviar e-mail', error})
