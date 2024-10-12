@@ -3,11 +3,9 @@ import * as Home from '../Home/Styles'
 import * as R from '../ResetPassword/Styles'
 import { FaArrowLeft } from "react-icons/fa";
 import { Context } from '../../Context/Context';
-import { useParams } from 'react-router-dom';
 
 export const ResetPassword = () => {
     const {navigate} = useContext(Context)
-    const {token} = useParams()
 
   return (
     <Home.Content>
@@ -28,12 +26,12 @@ export const ResetPassword = () => {
 
                 <Home.labelContent>
                     <label htmlFor="password">Nova senha:</label>
-                    <input type="email" name="password" id="passwordreset" placeholder='Digite a nova senha'/>
+                    <input type="email" name="password" id="passwordreset" placeholder='Digite a nova senha' />
                 </Home.labelContent>
             </Home.inputContainer>
 
             <Home.buttonContent>
-                <Home.buttonAvancar>Redefinir</Home.buttonAvancar>
+                <Home.buttonAvancar >Redefinir</Home.buttonAvancar>
             </Home.buttonContent>
         </Home.FormContainer>
     </Home.Content>

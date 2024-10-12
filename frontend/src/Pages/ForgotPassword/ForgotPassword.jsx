@@ -1,11 +1,26 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import * as Home from '../Home/Styles'
 import * as F from './Styles'
 import { FaArrowLeft } from "react-icons/fa";
 import { Context } from '../../Context/Context';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
 export const ForgotPassword = () => {
     const {navigate} = useContext(Context)
+
+    const {token} = useParams()
+    const [email, setEmail] = useState('')
+
+    const handlePasswordReset = async (e) => {
+        e.preventDefault()
+        try {   
+            const response = await axios.post('http://localhost:2000/request-password-reset', {email})
+            console.log(response)
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
   return (
     <Home.Content>
@@ -26,12 +41,12 @@ export const ForgotPassword = () => {
 
                 <Home.labelContent>
                     <label htmlFor="email">Email:</label>
-                    <input type="email" name="email" id="email" placeholder='E-mail cadastrado'/>
+                    <input type="email" name="email" id="email" placeholder='E-mail cadastrado' value={email} onChange={(e) => setEmail(e.target.value)}/>
                 </Home.labelContent>
             </Home.inputContainer>
 
             <Home.buttonContent>
-                <Home.buttonAvancar style={{width: '244px'}}>Enviar link de recuperação</Home.buttonAvancar>
+                <Home.buttonAvancar style={{width: '244px'}} onClick={(e) => handlePasswordReset(e)}>Enviar link de recuperação</Home.buttonAvancar>
             </Home.buttonContent>
         </Home.FormContainer>
     </Home.Content>
