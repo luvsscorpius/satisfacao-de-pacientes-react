@@ -5,6 +5,7 @@ import { FaArrowLeft } from "react-icons/fa";
 import { Context } from '../../Context/Context';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 export const ForgotPassword = () => {
     const {navigate} = useContext(Context)
@@ -18,7 +19,9 @@ export const ForgotPassword = () => {
             const response = await axios.post('http://localhost:2000/request-password-reset', {email})
             console.log(response)
         } catch (error) {
-            console.log(error)
+            if (error.status === 400) {
+                toast.error('Usuário não encontrado')
+            }
         }
     }
 

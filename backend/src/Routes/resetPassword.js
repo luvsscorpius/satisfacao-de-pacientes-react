@@ -12,12 +12,12 @@ router.post('/', async (req, res) => {
         const db = await Mongo()
         const collection = await db.collection('usuarios').find({}).toArray()
     
-        const foundUser = collection.filter(user => user.email === email)
+        const foundUser = collection.find(user => user.email === email)
         if (!foundUser) {
-            return res.status(400).json({message: 'Usuario não encontrado'})
+            return res.status(400).send({message: 'Usuario não encontrado'})
         }
 
-        
+
     } catch (error) {
         console.error(error)
     }
