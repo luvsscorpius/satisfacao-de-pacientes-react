@@ -5,6 +5,7 @@ import { FaArrowLeft } from "react-icons/fa";
 import { Context } from '../../Context/Context';
 import { useLocation, useParams } from 'react-router-dom';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 export const ResetPassword = () => {
     const {navigate} = useContext(Context)
@@ -21,6 +22,8 @@ export const ResetPassword = () => {
 
         try {
             const response = await axios.post(`http://localhost:2000/reset-password/${token}`, {newPassword})
+            toast.success('Senha atualizada com sucesso')
+            navigate('/')
         } catch (error) {
             console.error(error)
         }

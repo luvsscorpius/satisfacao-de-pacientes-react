@@ -15,6 +15,7 @@ router.post('/', async (req, res) => {
         const collection = await db.collection('usuarios').find({}).toArray()
     
         const foundUser = collection.find(user => user.email === email)
+        console.log(foundUser)
         if (!foundUser) {
             return res.status(400).send({ message: 'Usuário não encontrado' })
         }
