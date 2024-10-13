@@ -74,7 +74,6 @@ export const blocksContent = styled.div`
     }
 
     @media (max-width: 1024px) {
-        width: 90%;
         gap: 0.5rem;
     }
 `
