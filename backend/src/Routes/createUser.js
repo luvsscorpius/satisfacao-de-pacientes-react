@@ -11,7 +11,6 @@ bcrypt.hash(senha, saltRounds, async function(err, hash) {
 
     try {
         const db = await Mongo()
-        const collection = db.collection('usuarios').find({}).toArray()
     
         await db.collection('usuarios').insertOne({username: username, password: hash})
     
