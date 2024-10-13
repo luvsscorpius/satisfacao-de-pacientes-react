@@ -37,7 +37,23 @@ router.post('/', async (req, res) => {
             from: process.env.EMAIL_USER,
             to: foundUser.email,
             subject: 'Redefinição de senha',
-            text: `Clique no link para redefinir sua senha: http://localhost:3000/#/login/resetpassword?token=${token}`,
+            // Utilizando html aqui ao inves de text para deixar o email personalizavel
+            html: `
+            <div style="font-family: Arial, sans-serif; color: #333;">
+                <h2 style="color: #2E86C1;">Olá, ${foundUser.username}!</h2>
+                <p>Recebemos uma solicitação para redefinir sua senha.</p>
+                <p>Para continuar com o processo de redefinição, clique no botão abaixo:</p>
+                <a href="http://localhost:3000/#/login/resetpassword?token=${token}" 
+                   style="display: inline-block; background-color: #28a745; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
+                   Redefinir Senha
+                </a>
+                <p style="margin-top: 20px;">Se você não solicitou essa alteração, ignore este e-mail.</p>
+                <p>Atenciosamente,<br/>Equipe de Suporte</p>
+                <div style="margin-top: 30px; font-size: 12px; color: #999;">
+                    <p>Este é um e-mail automático, por favor não responda.</p>
+                </div>
+            </div>
+        `,
         }
 
         try {
