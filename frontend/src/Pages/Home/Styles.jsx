@@ -9,6 +9,9 @@ export const Content = styled.div`
     flex-direction: column;
 
     @media (max-width: 724px) {
+        margin-top: 10px;
+        margin-bottom: 10px;
+
         .login {
             height: 350px;
         }
