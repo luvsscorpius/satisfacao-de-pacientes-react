@@ -2,14 +2,15 @@ import styled from 'styled-components'
 
 export const Content = styled.div`
     width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 
     @media (max-width: 724px) {
-        padding-top: 30px;
-        padding-bottom: 30px;
+        border: 1px solid red;
+
         .login {
             height: 350px;
         }
@@ -96,7 +97,7 @@ export const checkContent = styled.div`
     }
 
     @media (max-width: 724px) {
-        height: 30px;
+        border: 1px solid red;
         width: 90%;
     }
 `

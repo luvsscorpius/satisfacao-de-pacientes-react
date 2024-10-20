@@ -43,8 +43,8 @@ export const Steps = styled.div`
     }
 
     @media (max-width: 1024px) {
-        width: 95%;
-        gap: 0.8rem;
+        width: 90%;
+        gap: 1rem;
 
         &:after {
             content: "";
