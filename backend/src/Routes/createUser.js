@@ -2,8 +2,8 @@ const bcrypt = require('bcrypt')
 const saltRounds = 12;
 const Mongo = require('../config/db')
 
-const username = 'and'
-const senha = 'January18Th*'
+const username = 'luis'
+const senha = 'luis'
 
 bcrypt.hash(senha, saltRounds, async function(err, hash) {
     if (err) throw err
