@@ -97,7 +97,6 @@ export const checkContent = styled.div`
     }
 
     @media (max-width: 724px) {
-        border: 1px solid red;
         diplay: flex;
         align-items: center;
         width: 90%;
