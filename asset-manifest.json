@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/satisfacao-de-pacientes-react/static/css/main.f029a054.css",
-    "main.js": "/satisfacao-de-pacientes-react/static/js/main.197b83d4.js",
+    "main.js": "/satisfacao-de-pacientes-react/static/js/main.a0f2ab98.js",
     "index.html": "/satisfacao-de-pacientes-react/index.html",
     "main.f029a054.css.map": "/satisfacao-de-pacientes-react/static/css/main.f029a054.css.map",
-    "main.197b83d4.js.map": "/satisfacao-de-pacientes-react/static/js/main.197b83d4.js.map"
+    "main.a0f2ab98.js.map": "/satisfacao-de-pacientes-react/static/js/main.a0f2ab98.js.map"
   },
   "entrypoints": [
     "static/css/main.f029a054.css",
-    "static/js/main.197b83d4.js"
+    "static/js/main.a0f2ab98.js"
   ]
 }
