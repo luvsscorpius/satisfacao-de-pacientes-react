@@ -53,8 +53,9 @@ export const blocksContent = styled.div`
         input {
             opacity: 0;
             position: absolute;
-            width: 20px;
+            width: 50px;
             cursor: pointer;
+            height: 100px;
         }
 
         input:checked + p {
