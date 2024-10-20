@@ -1,3 +1,11 @@
+## [1.6.1](https://github.com/luvsscorpius/satisfacao-de-pacientes-react/compare/v1.6.0...v1.6.1) (2024-10-20)
+
+
+### Bug Fixes
+
+* **frontend:** changing input radio height and width ([541c2c2](https://github.com/luvsscorpius/satisfacao-de-pacientes-react/commit/541c2c27be795df1f3ebd1bab53c1973a68b56cf))
+* **frontend:** implementing a logic to check if the user wants to stay ano even after typed name/ema ([ec7c2ae](https://github.com/luvsscorpius/satisfacao-de-pacientes-react/commit/ec7c2aedde91fcd0e9e5235607ec92e2079aa206))
+
 # [1.6.0](https://github.com/luvsscorpius/satisfacao-de-pacientes-react/compare/v1.5.0...v1.6.0) (2024-10-20)
 
 
