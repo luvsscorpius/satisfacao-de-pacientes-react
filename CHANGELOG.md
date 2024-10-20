@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/luvsscorpius/satisfacao-de-pacientes-react/compare/v1.5.0...v1.6.0) (2024-10-20)
+
+
+### Features
+
+* **frontend:** styling ([63195a9](https://github.com/luvsscorpius/satisfacao-de-pacientes-react/commit/63195a99cb11fd55a3641262c2dc7d6cea9f1751))
+
 # [1.5.0](https://github.com/luvsscorpius/satisfacao-de-pacientes-react/compare/v1.4.0...v1.5.0) (2024-10-20)
 
 
