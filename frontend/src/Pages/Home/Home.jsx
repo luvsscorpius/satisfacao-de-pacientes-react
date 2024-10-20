@@ -36,7 +36,7 @@ export const Home = () => {
 
     return (
         <H.Content>
-            <Info titulo="Deixe sua avaliação" p="Ficamos felizes com a sua sessão, utilize o formulário abaixo para avaliar o produto" />
+            <Info titulo="Deixe sua avaliação" p="Ficamos felizes com a sua sessão, utilize o formulário abaixo para avaliar a sessão." />
 
             <H.FormContainer onSubmit={(e) => checkIsChecked(e)} >
 
