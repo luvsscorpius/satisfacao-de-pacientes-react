@@ -7,9 +7,10 @@ export const Content = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 10px;
 
     @media (max-width: 724px) {
+        padding-top: 30px;
+        padding-bottom: 30px;
         .login {
             height: 350px;
         }
