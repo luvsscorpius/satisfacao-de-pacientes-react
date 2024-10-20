@@ -1,3 +1,11 @@
+# [1.3.0](https://github.com/luvsscorpius/satisfacao-de-pacientes-react/compare/v1.2.0...v1.3.0) (2024-10-20)
+
+
+### Features
+
+* **frontend:** changing endpoints ([69adf6d](https://github.com/luvsscorpius/satisfacao-de-pacientes-react/commit/69adf6d764666c0a49f40b6da8f49f8b81b25806))
+* **frontend:** changing endpoints ([31f31a0](https://github.com/luvsscorpius/satisfacao-de-pacientes-react/commit/31f31a084d982e796c7c14700f855afad16f2c73))
+
 # [1.2.0](https://github.com/luvsscorpius/satisfacao-de-pacientes-react/compare/v1.1.0...v1.2.0) (2024-10-20)
 
 
