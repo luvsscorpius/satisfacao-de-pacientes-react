@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/luvsscorpius/satisfacao-de-pacientes-react/compare/v1.4.0...v1.5.0) (2024-10-20)
+
+
+### Features
+
+* **frontend:** implementing gh pages ([d8c9d90](https://github.com/luvsscorpius/satisfacao-de-pacientes-react/commit/d8c9d9097615670853ba968c5ef34ec4fe7d33fa))
+
 # [1.4.0](https://github.com/luvsscorpius/satisfacao-de-pacientes-react/compare/v1.3.0...v1.4.0) (2024-10-20)
 
 
