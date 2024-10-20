@@ -9,6 +9,7 @@ app.use(express.json())
 app.use(cors({exposedHeaders: ['X-Total-Count']}))
 
 // Importando as rotas
+const indexRouter = require('./Routes/index')
 const createFeedBack = require('./Routes/createFeedBack')
 const login = require('./Routes/login')
 const getUsers = require('./Routes/getUsers')
@@ -17,6 +18,7 @@ const resetPassword = require('./Routes/resetPassword')
 const checkTokenResetPassword = require('./Routes/checkTokenResetPassword')
 
 // Usando as rotas
+app.use('/', indexRouter)
 app.use('/createFeedBack', createFeedBack)
 app.use('/login', login)
 app.use('/users', getUsers)
