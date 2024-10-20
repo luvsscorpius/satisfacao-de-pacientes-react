@@ -2,23 +2,31 @@ import styled from "styled-components";
 
 export const rateContent = styled.div`
     width: 625px;
-    height: 63px;
+    height: 75px;
     border: 1px solid #DDDDDD;
     border-radius: 9px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin-top: 10px;
+    position: relative;
     
     span {
-        height: 100%;
+        height: 90%;
         text-align: center;
-        position: relative;
+        border: 1px solid #ccc;
+        width: 70px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
 
         input {
             opacity: 0;
             position: absolute;
-            width: 20px;
-            top: 13px;
+            width: 65px;
+            height: 100px;
             cursor: pointer;
         }
     }
