@@ -71,7 +71,12 @@ export const acessoContainer = styled.div`
     justify-content: center;
 
     @media (max-width: 724px) {
-        width: 90%;
+        width: 100%;
+        height: 100%;
+
+        h2 {
+            font-size: 23px;
+        }
     }
 `
 
@@ -177,6 +182,7 @@ export const contatoContainer = styled.div`
     }
 
     @media (max-width: 724px) { 
+        height: 100%;
         width: 100%;
 
         ul {
