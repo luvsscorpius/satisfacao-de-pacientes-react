@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/luvsscorpius/satisfacao-de-pacientes-react/compare/v1.1.0...v1.2.0) (2024-10-20)
+
+
+### Features
+
+* **backend:** creating index router ([8b82e1e](https://github.com/luvsscorpius/satisfacao-de-pacientes-react/commit/8b82e1e7080a4549b05a58cbfdf5fbb57d1d42a3))
+
 # [1.1.0](https://github.com/luvsscorpius/satisfacao-de-pacientes-react/compare/v1.0.0...v1.1.0) (2024-10-20)
 
 
