@@ -32,6 +32,13 @@ export const Home = () => {
         setIsRequired(prevState => !prevState)
         // Lógica para deixar o input disponivel/indisponivel para digitar caso o usuário deseje se identificar ou nao
         setIsReadOnly(prevState => !prevState)
+
+
+        // Caso clique em anonimo mesmo depois de colocar as informações, o check limpara
+        if (isChecked === false) {
+            data.name = ""
+            data.email = ""
+        }
     }
 
     return (
