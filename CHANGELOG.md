@@ -1,3 +1,16 @@
+# [1.4.0](https://github.com/luvsscorpius/satisfacao-de-pacientes-react/compare/v1.3.0...v1.4.0) (2024-10-20)
+
+
+### Bug Fixes
+
+* **backend:** creating a new user ([03f10aa](https://github.com/luvsscorpius/satisfacao-de-pacientes-react/commit/03f10aaa383989c02bd7fc45d0b0651f68c65aa5))
+* **frontend:** styling footer ([559de5a](https://github.com/luvsscorpius/satisfacao-de-pacientes-react/commit/559de5a57d3b128618f71f37e007412a23adda55))
+
+
+### Features
+
+* **frontend:** styling footer ([385d747](https://github.com/luvsscorpius/satisfacao-de-pacientes-react/commit/385d7477975b31c8699e5ed80d1aeaf7115ec401))
+
 # [1.3.0](https://github.com/luvsscorpius/satisfacao-de-pacientes-react/compare/v1.2.0...v1.3.0) (2024-10-20)
 
 
