@@ -9,6 +9,7 @@ router.post('/', async (req, res) => {
     try {
         //Pegamos oque vem da requisição do frontend
         const {loginData} = req.body
+        console.log(loginData)
 
         const db = await Mongo()
         const collection = await db.collection('usuarios')

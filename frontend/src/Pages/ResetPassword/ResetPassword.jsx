@@ -21,7 +21,7 @@ export const ResetPassword = () => {
         e.preventDefault()
 
         try {
-            const response = await axios.post(`http://localhost:2000/reset-password/${token}`, {newPassword})
+            const response = await axios.post(`https://satisfacao-de-pacientes-react.vercel.app/${token}`, {newPassword})
             toast.success('Senha atualizada com sucesso')
             navigate('/')
         } catch (error) {

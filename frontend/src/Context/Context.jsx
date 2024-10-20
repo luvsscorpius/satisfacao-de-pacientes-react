@@ -36,7 +36,7 @@ export const ContextProvider = ({ children, formComponents }) => {
         e.preventDefault()
 
         try {
-            const response = await axios.put("http://localhost:2000/createFeedBack", data, {
+            const response = await axios.put("https://satisfacao-de-pacientes-react.vercel.app/createFeedBack", data, {
                 headers: { 'Content-Type': 'application/json' }
             })
 
@@ -56,7 +56,7 @@ export const ContextProvider = ({ children, formComponents }) => {
     // Pegar todos os feedbacks para criar um dashBoard
     const getAllFeedBacks = async () => {
         try {
-            const response = await axios.get("http://localhost:2000/feedbacks")
+            const response = await axios.get("https://satisfacao-de-pacientes-react.vercel.app/feedbacks")
             setAllFeedbacks(response.data)
             return response.data
         } catch (error) {
@@ -73,7 +73,7 @@ export const ContextProvider = ({ children, formComponents }) => {
         }
 
         try {
-            const response = await axios.post('http://localhost:2000/login', { loginData },
+            const response = await axios.post('https://satisfacao-de-pacientes-react.vercel.app/login', { loginData },
                 { headers: { 'Content-Type': 'application/json' } })
 
             if (response.status === 200) {

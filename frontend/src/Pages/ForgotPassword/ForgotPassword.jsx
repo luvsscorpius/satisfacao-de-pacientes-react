@@ -16,7 +16,7 @@ export const ForgotPassword = () => {
     const handlePasswordReset = async (e) => {
         e.preventDefault()
         try {   
-            const response = await axios.post('http://localhost:2000/request-password-reset', {email})
+            const response = await axios.post('https://satisfacao-de-pacientes-react.vercel.app/request-password-reset', {email})
             toast.success('E-mail enviado com sucesso')
         } catch (error) {
             if (error.status === 400) {

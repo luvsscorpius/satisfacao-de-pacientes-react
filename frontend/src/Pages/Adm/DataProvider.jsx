@@ -1,5 +1,5 @@
 import jsonServerProvider from 'ra-data-json-server';
 
-const apiUrl = "http://localhost:2000";
+const apiUrl = "https://satisfacao-de-pacientes-react.vercel.app/";
 export const dataProvider = jsonServerProvider(apiUrl);
 
